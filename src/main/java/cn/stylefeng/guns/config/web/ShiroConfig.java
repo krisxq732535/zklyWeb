@@ -147,7 +147,7 @@ public class ShiroConfig {
         /**
          * 登陆成功后跳转的url
          */
-        shiroFilter.setSuccessUrl("/");
+        shiroFilter.setSuccessUrl("/index");
         /**
          * 没有权限跳转的url
          */
@@ -180,6 +180,7 @@ public class ShiroConfig {
         hashMap.put("/login", "anon");
         hashMap.put("/global/sessionError", "anon");
         hashMap.put("/kaptcha", "anon");
+        hashMap.put("/", "anon");
         hashMap.put("/**", "user");
         shiroFilter.setFilterChainDefinitionMap(hashMap);
         return shiroFilter;

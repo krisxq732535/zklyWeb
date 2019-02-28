@@ -39,7 +39,9 @@ public class GunsProperties {
 
     private Boolean swaggerOpen = false;
 
+
     private String fileUploadPath;
+    private String fileServerUrl;
 
     private Boolean haveCreatePath = false;
 
@@ -108,6 +110,14 @@ public class GunsProperties {
 
     public void setSessionInvalidateTime(Integer sessionInvalidateTime) {
         this.sessionInvalidateTime = sessionInvalidateTime;
+    }
+
+    public String getFileServerUrl() {
+        return fileServerUrl;
+    }
+
+    public void setFileServerUrl(String fileServerUrl) {
+        this.fileServerUrl = fileServerUrl;
     }
 
     public Integer getSessionValidationInterval() {

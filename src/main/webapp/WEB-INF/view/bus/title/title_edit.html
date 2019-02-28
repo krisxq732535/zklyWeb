@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+            <form  method="post" id="forms" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#input id="id" name="" value="${item.id}" type='hidden' />
+                    <#input id="name" name="标题名字" value="${item.name}" underline="true"/>
+                        <#input id="pid" name="父标题id 默认0" value="${item.pid}" underline="true"/>
+                        <img width="100px" height="100px" src="${item.filePath}" underline="true">
+                        <#input type='file'  id="file" name="替换图片" underline="true"/>
+                        <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
+
+                </div>
+
+              <!--  <div class="col-sm-6">
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
+                            <#input id="createUser" name="创建人" value="${item.createUser}" underline="true"/>
+                            <#input id="modifyTime" name="修改时间" value=" ${item.modifyTime}" underline="true"/>
+                            <#input id="modifyUser" name="修改人" value="   ${item.modifyUser}" />
+                </div>-->
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="TitleInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="TitleInfoDlg.close()"/>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/bus/title/title_info.js"></script>
+@}

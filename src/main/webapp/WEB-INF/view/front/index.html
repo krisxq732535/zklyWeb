@@ -1,10 +1,1211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>中科联云</title>
+    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/mystyle.css" type="text/css" media="all" />
+    <link rel='stylesheet' href='/newStatic/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/buttons.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/index.css">
+    <style type='text/css'>
+
+    </style>
+    <link rel='stylesheet' href='newStatic/css/lightgallery.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <script src="newStatic/js/html5shiv.js"></script>
+    <script src="newStatic/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 7]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 6]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 5]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+
+
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var onepress_js_settings = { "onepress_disable_animation": "", "onepress_disable_sticky_header": "", "onepress_vertical_align_menu": "", "hero_animation": "flipInX", "hero_speed": "5000", "hero_fade": "750", "hero_duration": "5000", "is_home": "", "gallery_enable": "1" };
+        /* ]]> */
+    </script>
+
+
+    <script type='text/javascript' src='/newStatic/js/jquery.js'></script>
+    <script type='text/javascript' src='/newStatic/js/myjs.js'></script>
+    <script type='text/javascript' src='/newStatic/js/jquery-migrate.min.js'></script>
+
 </head>
-<body>
-中科联云官网
+
+<body class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-4 wp-custom-logo sticky-header no-header-transparent">
+<div id="page" class="hfeed site">
+    <!--头部-->
+    <header id="masthead" class="site-header fixed" role="banner">
+        <div class="container">
+            <!--logo-->
+            <div class="site-branding">
+                <div class="site-brand-inner has-logo-img no-desc">
+                    <div class="site-logo-div">
+                        <a href="/" class="custom-logo-link"><img style="margin-top: 3px" height="60" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                    </div>
+                </div>
+            </div>
+            <!--end logo-->
+            <!--导航-->
+            <div class="header-right-wrapper">
+                <a href="#0" id="nav-toggle">Menu<span></span></a>
+                <nav id="site-navigation" class="main-navigation">
+                    <ul class="onepress-menu">
+                        <li v-for="list in listTop" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a onclick="changeHtml(this)">{{list.name}}</a>
+                            <input type="hidden" v-bind:value="list.id">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--end 导航 -->
+        </div>
+    </header>
+    <!--end 头部-->
+    <!--中间内容-->
+    <div id="content" class="site-content">
+
+
+
+        <link href="css/video-js.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/newStatic/js/video.js"></script>
+        <script type="text/javascript" src="/newStatic/js/zh.js"></script>
+
+        <style>
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                z-index: 1001;
+                -moz-opacity: 0.8;
+                opacity: .80;
+                filter: alpha(opacity=80);
+            }
+
+            .white_content {
+                display: none;
+                position: absolute;
+                /*top: 61%;*/
+                left: 10%;
+                width: 80%;
+                background-color: black;
+                z-index: 1002;
+                overflow: auto;
+            }
+            .carousel-indicators li {
+                width: 30px;
+                height: 8px;
+                margin-right: 3px;
+                margin-left: 3px;
+
+            }
+
+            .carousel-indicators li {
+                width: 30px;
+                height: 8px;
+                margin-right: 3px;
+                margin-left: 3px;
+                background-color:#3EE3ED
+            }
+            .carousel-indicators li.active {
+                background-color: #1296DB;
+            }
+        </style>
+
+        <!--banner图-->
+        <section id="hero" class="hero-slideshow-wrapper hero-slideshow-normal">
+            <!--加载中图标-->
+            <div class="slider-spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+
+            <!--banner图文字-->
+            <div id="bannerText" class="container" style="padding-bottom: 0%;color:#fff">
+                <div class="hero__content hero-content-style1" style="max-height:80%">
+                    <h2 class="hero-large-text">中科联云—— <span class="js-rotating">以客户为中心 | 承诺必达</span></h2>
+                    <p class="hero-small-text"> 海纳百川，聚士合杰 <strong>上下求索，凝聚智慧</strong> 承诺必达，追求卓越<br> 成为中国智能制造领域领先的、全面的系统集成解决方案及服务提供商.</p>
+                    <a href="/AboutUs" class="btn btn-theme-primary btn-lg">了解更多</a>
+                </div>
+            </div>
+        </section>
+        <!--我们的观点-->
+        <section id="about" class="section-about section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/Blog">
+                        <h2 class="section-title">
+                            我们的观点
+                        </h2>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6  wow slideInUp">
+                        <div class="about-image" style="text-align:center;">
+                            <a href="javascript:void (0)">
+
+                                <img width="640" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
+                            </a>
+                        </div>
+                        <a href="javascript:void (0)">
+                            <h3 class="itemAlign">智能制造实现之路：“三化融合”</h3>
+                        </a>
+                        <p>精益化为思想、信息化为神经网络、自动化为四肢，构建出智能工厂有机体，为企业在智能制造转型中实现价值的落地</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-6  wow slideInUp">
+                        <div class="about-image" style="text-align:center;">
+                            <a href="javascript:void (0)">
+
+                                <img width="640" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
+                            </a>
+                        </div>
+                        <a href="javascript:void (0)">
+                            <h3 class="itemAlign">装备制造如何实现拉动式生产</h3>
+                        </a>
+                        <p>“拉动”式生产是以准时管理为核心的精益制造体系的中心思想之一。真正实现拉式生产，需要整个企业内部上下游，甚至供应链整体水平的同步提升。在生产线上看任何一道工序，都不能将其孤立在生产线之外。</p>
+                    </div>
+                </div>
+            </div>
+        </section><!--end 我们的观点-->
+        <!--我们的产品-->
+        <section id="features" class="section-features section-padding section-meta onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/Product">
+                        <h2 class="section-title">
+                            我们的产品
+                        </h2>
+                    </a>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <!--产品列表-->
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">生产执行系统（nebula PES）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>对制造过程资源和活动进行规划、协调、指导、采集和管理</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">智能产线</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>中科联云信息化系统外，已扩展到产线的规划设计和实施，形成了软硬一体化的智能制造解决方案。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">质量管理系统（nebula QMS）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>提供了对TQM全面质量管理的支持</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">设备管理系统（nebula EAM）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>提供了对TPM全面维护管理的各项功能</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">仓储管理系统（nebula WMS）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>管理物料的存储、作业流程、软硬件设施</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">物流执行系统（nebula LES）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>构建工厂物流，实现拉动式物流执行</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">供应商关系管理(nebula SRM)</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>实现各业务的紧密协作，避免了信息孤岛</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">技术平台（nebula Technical Platform）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>企业级信息系统开发及运行平台</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">公共业务组件（nebula Backbone）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>制造运营管理套件（Nebula MOM Suite）的基底</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">物联网使能器（nebula IoT Enabler）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>实现从车间设备物联到企业、云端应用集成</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">能源管理系统（nebula EMS）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>对电力、水、气等能源的监控、分析与优化</p>
+                            </div>
+                        </div>
+                        <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                            <div class="feature-media">
+                                <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                    <i class="fa fa-stack-2x icon-background-default"></i>
+                                    <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                </a>
+                            </div>
+                            <a href="javascript:void (0)">
+                                <h3 class="section_service_2_title_0">业务智能（nebula Compass）</h3>
+                            </a>
+                            <div class="feature-content">
+                                <p>实现企业级制造运营大数据分析、业务流程优化和更聪明的决策</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--end 我们的产品-->
+        <!--行业解决方案-->
+        <section id="services" class="section-services section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/Solution">
+                        <h2 class="section-title">
+                            行业解决方案
+                        </h2>
+                    </a>
+                </div>
+
+                <!--主要行业解决方案列表-->
+                <div id="servicesCarousel" class="carousel slide industryCarousel mySolutionCarousel" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <ul class="carousel-indicators">
+                            <li data-target="#servicesCarousel" data-slide-to="0" class="slide-li-item li0 active  "></li>
+                            <li data-target="#servicesCarousel" data-slide-to="1" class="slide-li-item li1 "></li>
+                        </ul>
+                        <div class="carousel-item active item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">电力装备行业</h4>
+                                        </a>
+                                        <p>以销售订单为源头，实现生产计划高效协同，提升物料齐套率、配送及时性和缩短交付期</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机车车辆行业</h4>
+                                        </a>
+                                        <p>以工位制为核心，形成协同一体化的生产管理模式，实现生产制造过程高效精细化的管控</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">电子制造行业</h4>
+                                        </a>
+                                        <p>提供从来料入库到成品入库的端到端解决方案，实现“溯源制造、透明制造、敏捷制造”的目标</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">工程机械行业</h4>
+                                        </a>
+                                        <p>帮助企业缩短制造周期、实时跟踪过计划执行情况，增强订单紧急响应、变更突发能力</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机械加工组装行业</h4>
+                                        </a>
+                                        <p>以平台和组件为核心，实现生产过程透明化、生产管理精细化、生产控制实时化</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">航空航天行业</h4>
+                                        </a>
+                                        <p>提供对计划、物料、生产过程、质量、设备等的精细化管理，实现全局闭环的质量控制和全程追溯</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <input type="button" class="btn prev-slide" value="<<">
+                        <div style="width:15%;display:inline-block"></div>
+                        <input type="button" class="btn next-slide" value=">>">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end 行业解决方案-->
+        <!--领域解决方案-->
+        <section id="services" class="section-services section-padding section-meta onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/Solution#FieldSolutions">
+                        <h2 class="section-title">
+                            领域解决方案
+                        </h2>
+                    </a>
+                </div>
+                <!--主要领域解决方案列表-->
+                <div id="servicesCarousel" class="carousel slide fieldCarousel mySolutionCarousel" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <ul class="carousel-indicators">
+                            <li data-target="#servicesCarousel" data-slide-to="0" class="slide-li-item li0 active  "></li>
+                            <li data-target="#servicesCarousel" data-slide-to="1" class="slide-li-item li1 "></li>
+                            <li data-target="#servicesCarousel" data-slide-to="2" class="slide-li-item li2 "></li>
+                            <li data-target="#servicesCarousel" data-slide-to="3" class="slide-li-item li3 "></li>
+                        </ul>
+                        <div class="carousel-item active item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">有限产能生产排程</h4>
+                                        </a>
+                                        <p>实现多算法自动排程形成生产作业计划，动态安排生产订单顺序，形成计划闭环</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">制造执行管理方案</h4>
+                                        </a>
+                                        <p>对作业计划分配资源，并下达到生产现场和生产线自动控制系统，实现生产过程可视化、生产全过程可追溯</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">全面质量管理</h4>
+                                        </a>
+                                        <p>保障生产和质量相关活动符合企业规范，利用信息技术整合、规范公司的质量管理体系及质量管理工作</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">软硬一体精益仓储管理</h4>
+                                        </a>
+                                        <p>基于精益供应链运营优化和生产拉动的需求对多级仓储单元进行仓库作业管理，实现即时配送</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">拉动式精益生产配送</h4>
+                                        </a>
+                                        <p>与自动化立体仓库及AGV等集成，实现生产节拍匹配与物流配送执行 ​</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">设备预防性维护</h4>
+                                        </a>
+                                        <p>保障生产、检验、物流运输等设备正常运行的相关管理，包括设备的点检管理、维护管理、维修管理、设备故障的管理等</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">拉动式精益供应链协同</h4>
+                                        </a>
+                                        <p>推行精益供应链，减少供应链的库存占用、减少搬运次数，同时能保证供应的流畅性，避免停工待料</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">安灯系统及可视化</h4>
+                                        </a>
+                                        <p>建立生产现场的逐级报警与处理机制，使异常状况快速解决，保障生产流程高效有序</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">管理者驾驶舱</h4>
+                                        </a>
+                                        <p>是智能决策水平的体现，而智能决策的能力和水平是决定企业智能制造水平的关键</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">钣金加工解决方案</h4>
+                                        </a>
+                                        <p>同时兼顾生产订单物料齐套和钣金加工材料最大利用率的需求，依业务策略实现最佳平衡</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">软硬一体的生产线规划</h4>
+                                        </a>
+                                        <p> 可帮助企业进行新建生产线或改造现有生产线的规划咨询，以提升企业现有制造装备的数字化、智能化能力，提高产能</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">装配流水线定制服务</h4>
+                                        </a>
+                                        <p>按照下游需求拉动的上步工序配料、生产、精确配餐、配送，并与质检和返工作业整合的集成方案</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item item">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机器视觉解决方案</h4>
+                                        </a>
+                                        <p>利用机器视觉技术，对零件分类、机器人引导、加工尺寸测量、零件装配验证、质量保证等提供全面解决方案</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">应用系统集成方案</h4>
+                                        </a>
+                                        <p>基于面向服务的体系架构（SOA）实现，接口采用中立的方式进行定义，可以独立于实现服务的硬件平台、操作系统和编程语言</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">工厂智慧能源管理</h4>
+                                        </a>
+                                        <p>完善能源信息的采集、存储、管理，为进一步对能源数据进行挖掘、分析、加工和处理提供条件</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">基于VR数字孪生工厂</h4>
+                                        </a>
+                                        <p>利用虚拟仿真和虚实融合技术对整个工厂进行数字化整体建模，建立和物理车间高度接近的三维数字化虚拟车间</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <input type="button" class="btn prev-slide" value="<<">
+                        <div style="width:15%;display:inline-block"></div>
+                        <input type="button" class="btn next-slide" value=">>">
+                    </div>
+                </div>
+
+            </div>
+        </section><!--end 领域解决方案-->
+        <!--视频-->
+        <div id="videolightbox-div" class="section-parallax">
+            <div class="parallax-bg" data-stellar-ratio="0.2" data-stellar-offset-parent="true" style="background-image: url(images/视频背景.jpg);">
+            </div>
+            <section id="videolightbox" class="section-videolightbox section-padding section-padding-larger section-inverse onepage-section">
+                <div class="container">
+                    <div id="videoDiv" class="videolightbox__icon1 videolightbox-popup1">
+                        <span id="video_icon" class="video_icon"><i class="fa fa-play"></i></span>
+                    </div>
+                    <h2 class="videolightbox__heading"><strong>中科联云 - 智能制造服务专家</strong></h2>
+                </div>
+
+            </section>
+        </div>
+        <div id="light" class="white_content" style="text-align:right">
+            <a id="close_Icon" href="javascript:void(0)" style="padding:10px">
+                <img src="/newStatic/picture/close.png" />
+            </a>
+            <embed id="embed" src="http://static.video.qq.com/TencentPlayer.swf?vid=g0501i48xov&auto=1&outhost=http://cf.qq.com/" allowFullScreen="true" quality="high" align="middle" type="application/x-shockwave-flash" style="width:100%;">
+        </div>
+        <div id="fade" class="black_overlay"></div>
+        <!--end 视频-->
+        <!--我们的案例-->
+        <section id="cases" class="section-team section-padding section-meta onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/Case">
+                        <h2 class="section-title">
+                            我们的案例
+                        </h2>
+                    </a>
+                </div>
+                <div class="caseWrap" id="cases">
+                    <div class="team-members row team-layout-4 caseList">
+                        <!--案例列表-->
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">中车戚墅堰</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">中车浦镇</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">西电操动机构</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">烽火通信</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">中航工业</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">东方电机</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">南瑞集团</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)">
+                                    <img width="240" height="150" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)">
+                                    <h5 class="member-name">CETC某所</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!--end 案例列表-->
+                    </div>
+                    <a class="left carousel-control carousel-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="icon-prev" aria-hidden="true" style="background-color:#E60012"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control carousel-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="icon-next" aria-hidden="true" style="background-color:#E60012"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--end 我们的案例-->
+        <!--公司新闻-->
+        <section id="news" class="section-news section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="/AboutUs#News">
+                        <h2 class="section-title">
+                            公司新闻
+                        </h2>
+                    </a>
+                </div>
+                <div class="section-content blog-entry wow slideInUp">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!--新闻列表-->
+                            <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                <div class="list-article-thumb">
+                                    <a href="javascript:void (0)">
+                                        <img width="130" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" />
+
+                                    </a>
+                                </div>
+                                <div class="list-article-content">
+                                    <header class="entry-header">
+                                        <h4 class="entry-title"><a href="javascript:void (0)">项目资讯丨陕鼓合同履约信息透明化系统项目顺利验收</a></h4>
+                                    </header>
+                                    <div class="entry-excerpt">
+                                        <p class="cont">由中科联云承接的陕鼓合同履约信息透明化系统项目验收大会在陕鼓集团临潼生产基地顺利召开，项目实现预期目标，通过验收！</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                <div class="list-article-thumb">
+                                    <a href="javascript:void (0)">
+                                        <img width="130" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" />
+
+                                    </a>
+                                </div>
+                                <div class="list-article-content">
+                                    <header class="entry-header">
+                                        <h4 class="entry-title"><a href="javascript:void (0)">陈安丽副省长调研中科联云承建的武汉工程大学智能制造工程中心</a></h4>
+                                    </header>
+                                    <div class="entry-excerpt">
+                                        <p class="cont">湖北省副省长陈安丽一行来到武汉工程大学进行工作调研，并实地考察了中科联云承建的武汉工程大学智能制造工程中心。</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                <div class="list-article-thumb">
+                                    <a href="javascript:void (0)">
+                                        <img width="130" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" />
+
+                                    </a>
+                                </div>
+                                <div class="list-article-content">
+                                    <header class="entry-header">
+                                        <h4 class="entry-title"><a href="javascript:void (0)">星聚壹玖 傲寒迎春 武汉企业家携手开启新一年</a></h4>
+                                    </header>
+                                    <div class="entry-excerpt">
+                                        <p class="cont">2019武汉科创企业家峰会暨致远创盟新春联谊会在荷田大酒店隆重举行，来自智能制造、移动互联网、人工智能、新材料、光通信等领域的150余位企业家齐聚一堂。</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div style="text-align:center;" class="ReadMore">
+                        <a href="/AboutUs#News" class="button button-raised button-primary button-pill" style="font-family:SimHei;font-weight:bold">阅读更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end 公司新闻-->
+
+
+
+
+
+
+    </div>
+    <!-- end 中间内容 -->
+    <!--底部-->
+    <footer class="site-footer">
+        <div class="footer-connect">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-left col-sm-8" style="z-index:9999;">
+                        <dl v-for="list in listBottom">
+                            <dt>
+                                <a href="javascript:void (0)">{{list.name}}</a>
+                            </dt>
+                            <dd v-for="list1 in list.infos">
+                                <a href="javascript:void (0)">
+                                    {{list1.title}}
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="footer-left col-sm-4">
+
+                            <div class="share col-sm-5" style="text-align:center;margin:15px">
+                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
+                                官方微信
+                            </div>
+                        </div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+    </footer>
+    <!--end 底部-->
+</div><!-- #page -->
+
+<div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
+<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
+<script type='text/javascript' src='/newStatic/js/plugins.js'></script>
+<script type='text/javascript' src='/newStatic/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/jquery.superslide.2.1.1.js'></script>
+<script type='text/javascript' src='/newStatic/js/theme.js'></script>
+<script type="text/javascript" src="/newStatic/js/vue.min.js"></script>
+<script type="text/javascript" src="/newStatic/js/plugin.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?721d35f06ef55f9520c9c87094e876e1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </body>
 </html>
+
+<!--Banner和文字-->
+<script type="text/javascript">
+    (function () {
+        //Banner图
+        var bannerDiv = document.getElementById("hero");
+        var bannerIllustration = '[&quot;http://bill-sj.com/Content/banner/默认.jpg&quot;]';
+        bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
+
+        //Banner文字
+        var bannerText = '<p style="white-space: normal;">&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula SRM 5.0&lt;/h2&gt;&lt;p class=&quot;hero-small-text&quot;&gt;nebula MOM Suite的主要产品之一，&lt;strong&gt;促进了企业实现平台一体化运行管理&lt;/strong&gt;&lt;br&gt;实现各业务的紧密协作，避免了信息孤岛。&lt;/p&gt;&lt;a href=&quot;Blog/4C89F962D6B14452BFEB8E462C446C5E/“星云”再诞“新星”-中科联云正式发布供应商关系管理系统5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp; &nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula WMS 5.0&lt;/h2&gt;</p><p>&nbsp; &nbsp;&lt;p class=&quot;hero-small-text&quot;&gt;nebula MOM Suite的主要产品之一，&lt;strong&gt;用于支撑制造企业供应链运营，&lt;/strong&gt;&lt;br&gt;对原料、制品和成品进行入出库及在库管理。&lt;/p&gt;</p><p>&nbsp; &nbsp;&lt;a href=&quot;Blog/6F404D21EF5440C5B6B8AFC6E7CD44B4/“星云”再诞“新星”-中科联云正式发布智能仓储管理系统5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp; &nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;物联网产品nebula IoT Enabler 5.0&lt;/h2&gt;</p><p>&nbsp; &nbsp;&lt;p class=&quot;hero-small-text&quot;&gt; 面向采集监控软件市场，&lt;strong&gt;作为工业自动化软件中的基础平台软件，&lt;/strong&gt;&lt;br&gt;可为各行业提供解决方案&lt;/p&gt;</p><p>&nbsp; &nbsp;&lt;a href=&quot;Blog/21C842A180AB467DAC55E1A57BCD837D/中科联云发布物联网产品nebula+IoT+Enabler+5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula™智能制造平台 &lt;span class=&quot;js-rotating&quot;&gt;&lt;/h2&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class=&quot;hero-small-text&quot;&gt; 平台包含&lt;strong&gt;底层技术平台、制造运营管理套件和业务智能模块&lt;/strong&gt;&lt;br&gt;覆盖制造业上下游各个环节，引领企业数字化重塑.&lt;/p&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;/Product&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p><br/></p>',
+            containerDiv = document.getElementById("bannerText"),
+            decodeBannerText = decodeHtml(bannerText);
+        if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
+            decodeBannerText = decodeBannerText.replace(new RegExp("<p>", "gm"), "").replace(new RegExp("</p>", "gm"), "");
+            decodeBannerText = decodeBannerText.replace(new RegExp("<a href=", "gm"), "</p><a href=");
+            containerDiv.innerHTML = containerDiv.innerHTML + decodeBannerText;
+        }
+
+        //bodyInnerHtml
+        var bodyInnerHTML = document.body.innerHTML;
+        document.body.innerHTML = bodyInnerHTML.replace(/\ufeff/g, '');
+    })();
+
+    function decodeHtml(s) {
+        var HTML_DECODE = {
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&nbsp;": " ",
+            "&quot;": "\"",
+            "&copy;": "",
+            // Add more
+        };
+
+        var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g;
+
+        var REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+        var REGX_TRIM = /(^\s*)|(\s*$)/g;
+
+        s = (s != undefined) ? s : "";
+        return (typeof s != "string") ? s :
+            s.replace(REGX_HTML_DECODE,
+                function ($0, $1) {
+                    var c = HTML_DECODE[$0];
+                    if (c == undefined) {
+                        // Maybe is Entity Number
+                        if (!isNaN($1)) {
+                            c = String.fromCharCode(($1 == 160) ? 32 : $1);
+                        } else {
+                            c = $0;
+                        }
+                    }
+                    return c;
+                });
+    };
+</script>
+
+<!--视频-->
+<script type="text/javascript">
+    var videoIcon = document.getElementById("video_icon");
+    var closeIcon = document.getElementById("close_Icon");
+    var light = document.getElementById("light");
+    var embed = document.getElementsByTagName('embed')[0];
+    var video = document.getElementsByTagName('video')[0];
+
+    //打开弹出层
+    if (videoIcon != null) {
+        videoIcon.onclick = function (e) {
+            var point = getPointerPosition(e);  //获取鼠标点击按钮的位置，将其作为弹出层的top值
+            light.style.top = point.top + "px";
+            light.style.height = document.body.clientHeight * 0.9 + "px";
+            embed.style.height = document.body.clientHeight * 0.86 + "px";
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            //video.play();
+        }
+    }
+
+    //关闭弹出层
+    if (closeIcon != null) {
+        closeIcon.onclick = function () {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //video.pause();
+        }
+    }
+
+    //暂停/播放
+    if (video != null) {
+        video.onclick = function () {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    }
+
+    //获取鼠标点击位置
+    function getPointerPosition(e) {
+
+        var obj = e.currentTarget || document.activeElement;
+        var position = {
+            left: e.pageX || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft)),
+            top: e.pageY || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop))
+        };
+        return position;
+    }
+</script>
+<script>
+    var url;
+    var vm = new Vue({
+        el:"#page",
+        data:{
+            listTop:[],
+            listBottom:[]
+        },
+        created:function () {
+            this.dataTableList();
+        },
+        mounted:function () {
+
+        },
+        methods:{
+            dataTableList:function () {
+                url="/web/menu";
+                ajax.data("post",true,url,"json",'',function (data) {
+                    vm.listTop = data.data.titleOn;
+                    vm.listBottom = data.data.titleDown;
+                    sessionStorage.setItem("listTop", JSON.stringify(data.data.titleOn));
+                    sessionStorage.setItem("listBottom", JSON.stringify(data.data.titleDown));
+                })
+            },
+        }
+    })
+</script>

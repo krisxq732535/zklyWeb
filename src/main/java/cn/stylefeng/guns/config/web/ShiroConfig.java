@@ -178,6 +178,7 @@ public class ShiroConfig {
         hashMap.put("/newStatic/**", "anon");
         hashMap.put("/web/**", "anon");
         hashMap.put("/static/**", "anon");
+        hashMap.put("/newStatic/**", "anon");
         hashMap.put("/gunsApi/**", "anon");
         hashMap.put("/login", "anon");
         hashMap.put("/global/sessionError", "anon");

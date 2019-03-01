@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>中科联云</title>
+    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/mystyle.css" type="text/css" media="all" />
+    <link rel='stylesheet' href='/newStatic/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/buttons.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/index.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/lightgallery.css' type='text/css' media='all' />
+
+    <!--[if lt IE 9]>
+    <script src="/newStatic/js/html5shiv.js"></script>
+    <script src="/newStatic/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style>
+        #page{
+            display:none;
+        }
+        #notsupport{
+            display:block !important;
+        }
+    </style>
+    <![endif]-->
+    <!--[if IE 7]>
+    <style>
+        #page{
+            display:none;
+        }
+        #notsupport{
+            display:block !important;
+        }
+    </style>
+    <![endif]-->
+    <!--[if IE 6]>
+    <style>
+        #page{
+            display:none;
+        }
+        #notsupport{
+            display:block !important;
+        }
+    </style>
+    <![endif]-->
+    <!--[if IE 5]>
+    <style>
+        #page{
+            display:none;
+        }
+        #notsupport{
+            display:block !important;
+        }
+    </style>
+    <![endif]-->
+
+
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var onepress_js_settings = { "onepress_disable_animation": "", "onepress_disable_sticky_header": "", "onepress_vertical_align_menu": "", "hero_animation": "flipInX", "hero_speed": "5000", "hero_fade": "750", "hero_duration": "5000", "is_home": "", "gallery_enable": "1" };
+        /* ]]> */
+    </script>
+
+
+    <script type='text/javascript' src='/newStatic/js/jquery.js'></script>
+    <script type='text/javascript' src='/newStatic/js/myjs.js'></script>
+    <script type='text/javascript' src='/newStatic/js/jquery-migrate.min.js'></script>
+
+</head>
+
+<body class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-4 wp-custom-logo sticky-header no-header-transparent">
+<div id="page" class="hfeed site">
+    <!--头部-->
+    <header id="masthead" class="site-header fixed" role="banner">
+        <div class="container">
+            <!--logo-->
+            <div class="site-branding">
+                <div class="site-brand-inner has-logo-img no-desc">
+                    <div class="site-logo-div">
+                        <a href="/" class="custom-logo-link"><img height="66" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                    </div>
+                </div>
+            </div>
+            <!--end logo-->
+            <!--导航-->
+            <div class="header-right-wrapper">
+                <a href="#0" id="nav-toggle">Menu<span></span></a>
+                <nav id="site-navigation" class="main-navigation">
+                    <ul class="onepress-menu">
+                        <li v-for="list in listTop" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a onclick="changeHtml(this)">{{list.name}}</a>
+                            <input type="hidden" v-bind:value="list.id">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--end 导航 -->
+        </div>
+    </header>
+    <!--end 头部-->
+    <!--中间内容-->
+    <div id="content" class="site-content">
+
+
+
+        <main id="main" class="site-main" role="main">
+            <!--banner图-->
+            <section id="hero" data-images="[&quot;/Content/banner/观点.jpg&quot;]" class="hero-slideshow-wrapper hero-slideshow-normal">
+                <!--加载中图标-->
+                <div class="slider-spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+
+                <!--banner图文字-->
+                <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
+                </div>
+            </section>
+
+            <section class="section-services section-padding onepage-section">
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li id="industryTab" class="active">
+                            <a data-toggle="tab" href="javascript:void(0)" onclick="onTabClick(this)">
+                                行业解决方案
+                            </a>
+                        </li>
+                        <li id="fieldTab">
+                            <a data-toggle="tab" href="javascript:void(0)" onclick="onTabClick(this)">
+                                领域解决方案
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div id="myTabContent" class="tab-content">
+                <!--行业解决方案-->
+                <section id="IndustrySolutions" class="section-services onepage-section" style="display:block">
+                    <div class="container">
+                        <div class="row">
+                            <!--主要行业解决方案列表-->
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">电力装备行业</h4>
+                                        </a>
+                                        <p>以销售订单为源头，实现生产计划高效协同，提升物料齐套率、配送及时性和缩短交付期</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机车车辆行业</h4>
+                                        </a>
+                                        <p>以工位制为核心，形成协同一体化的生产管理模式，实现生产制造过程高效精细化的管控</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">电子制造行业</h4>
+                                        </a>
+                                        <p>提供从来料入库到成品入库的端到端解决方案，实现“溯源制造、透明制造、敏捷制造”的目标</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">工程机械行业</h4>
+                                        </a>
+                                        <p>帮助企业缩短制造周期、实时跟踪过计划执行情况，增强订单紧急响应、变更突发能力</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机械加工组装行业</h4>
+                                        </a>
+                                        <p>以平台和组件为核心，实现生产过程透明化、生产管理精细化、生产控制实时化</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">航空航天行业</h4>
+                                        </a>
+                                        <p>提供对计划、物料、生产过程、质量、设备等的精细化管理，实现全局闭环的质量控制和全程追溯</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--end 行业解决方案-->
+                <!--领域解决方案-->
+                <section id="FieldSolutions" class="section-services onepage-section" style="display:none">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">有限产能生产排程</h4>
+                                        </a>
+                                        <p>实现多算法自动排程形成生产作业计划，动态安排生产订单顺序，形成计划闭环</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">制造执行管理方案</h4>
+                                        </a>
+                                        <p>对作业计划分配资源，并下达到生产现场和生产线自动控制系统，实现生产过程可视化、生产全过程可追溯</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">全面质量管理</h4>
+                                        </a>
+                                        <p>保障生产和质量相关活动符合企业规范，利用信息技术整合、规范公司的质量管理体系及质量管理工作</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">软硬一体精益仓储管理</h4>
+                                        </a>
+                                        <p>基于精益供应链运营优化和生产拉动的需求对多级仓储单元进行仓库作业管理，实现即时配送</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">拉动式精益生产配送</h4>
+                                        </a>
+                                        <p>与自动化立体仓库及AGV等集成，实现生产节拍匹配与物流配送执行 ​</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">设备预防性维护</h4>
+                                        </a>
+                                        <p>保障生产、检验、物流运输等设备正常运行的相关管理，包括设备的点检管理、维护管理、维修管理、设备故障的管理等</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">拉动式精益供应链协同</h4>
+                                        </a>
+                                        <p>推行精益供应链，减少供应链的库存占用、减少搬运次数，同时能保证供应的流畅性，避免停工待料</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">安灯系统及可视化</h4>
+                                        </a>
+                                        <p>建立生产现场的逐级报警与处理机制，使异常状况快速解决，保障生产流程高效有序</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">管理者驾驶舱</h4>
+                                        </a>
+                                        <p>是智能决策水平的体现，而智能决策的能力和水平是决定企业智能制造水平的关键</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">钣金加工解决方案</h4>
+                                        </a>
+                                        <p>同时兼顾生产订单物料齐套和钣金加工材料最大利用率的需求，依业务策略实现最佳平衡</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">软硬一体的生产线规划</h4>
+                                        </a>
+                                        <p> 可帮助企业进行新建生产线或改造现有生产线的规划咨询，以提升企业现有制造装备的数字化、智能化能力，提高产能</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">装配流水线定制服务</h4>
+                                        </a>
+                                        <p>按照下游需求拉动的上步工序配料、生产、精确配餐、配送，并与质检和返工作业整合的集成方案</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">机器视觉解决方案</h4>
+                                        </a>
+                                        <p>利用机器视觉技术，对零件分类、机器人引导、加工尺寸测量、零件装配验证、质量保证等提供全面解决方案</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">应用系统集成方案</h4>
+                                        </a>
+                                        <p>基于面向服务的体系架构（SOA）实现，接口采用中立的方式进行定义，可以独立于实现服务的硬件平台、操作系统和编程语言</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">工厂智慧能源管理</h4>
+                                        </a>
+                                        <p>完善能源信息的采集、存储、管理，为进一步对能源数据进行挖掘、分析、加工和处理提供条件</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item" style="background-color:#F1F1F1">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">基于VR数字孪生工厂</h4>
+                                        </a>
+                                        <p>利用虚拟仿真和虚实融合技术对整个工厂进行数字化整体建模，建立和物理车间高度接近的三维数字化虚拟车间</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--end 领域解决方案-->
+            </div>
+        </main>
+
+        <script type="text/javascript">
+            var onTabClick = function (node) {
+                window.event ? window.event.cancelBubble = true : e.stopPropagation();  //阻止事件冒泡和默认事件
+
+                var me = node,
+                    pNode = node.parentNode,
+                    field = document.getElementById("FieldSolutions"),
+                    industry = document.getElementById("IndustrySolutions"),
+                    myTabContent = document.getElementById("myTabContent");
+
+                field.style.display = "none";
+                industry.style.display = "none";
+
+                if (pNode.id == "industryTab") {
+                    document.getElementById("fieldTab").className = "";
+                    document.getElementById("fieldTab").setAttribute("class", "");
+
+                    industry.style.display = "block";
+                }
+                else {
+                    document.getElementById("industryTab").className = "";
+                    document.getElementById("industryTab").setAttribute("class", "");
+
+                    field.style.display = "block";
+                }
+                pNode.className = "active";
+                pNode.setAttribute("class", "active");
+            }
+        </script>
+
+    </div>
+    <!-- end 中间内容 -->
+    <!--底部-->
+    <footer class="site-footer">
+        <div class="footer-connect">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-left col-sm-8" style="z-index:9999;">
+                        <dl v-for="list in listBottom">
+                            <dt>
+                                <a href="javascript:void (0)">{{list.name}}</a>
+                            </dt>
+                            <dd v-for="list1 in list.infos">
+                                <a href="javascript:void (0)">
+                                    {{list1.title}}
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="footer-left col-sm-4">
+
+                            <div class="share col-sm-5" style="text-align:center;margin:15px">
+                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
+                                官方微信
+                            </div>
+                        </div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+    </footer>
+    <!--end 底部-->
+</div><!-- #page -->
+<div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
+<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
+<script type='text/javascript' src='/newStatic/js/plugins.js'></script>
+<script type='text/javascript' src='/newStatic/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/jquery.superslide.2.1.1.js'></script>
+<script type='text/javascript' src='/newStatic/js/theme.js'></script>
+<script type="text/javascript" src="/newStatic/js/vue.min.js"></script>
+<script type="text/javascript" src="/newStatic/js/plugin.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?721d35f06ef55f9520c9c87094e876e1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
+
+<!--Banner和文字-->
+<script type="text/javascript">
+    (function () {
+        //Banner图
+        var bannerDiv = document.getElementById("hero");
+        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=731AC8C0B8C14BB691647F321B1CB8B7&quot;]';
+        bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
+
+        //Banner文字
+        var bannerText = '',
+            containerDiv = document.getElementById("bannerText"),
+            decodeBannerText = decodeHtml(bannerText);
+        if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
+            decodeBannerText = decodeBannerText.replace(new RegExp("<p>", "gm"), "").replace(new RegExp("</p>", "gm"), "");
+            decodeBannerText = decodeBannerText.replace(new RegExp("<a href=", "gm"), "</p><a href=");
+            containerDiv.innerHTML = containerDiv.innerHTML + decodeBannerText;
+        }
+
+        //bodyInnerHtml
+        var bodyInnerHTML = document.body.innerHTML;
+        document.body.innerHTML = bodyInnerHTML.replace(/\ufeff/g, '');
+    })();
+
+    function decodeHtml(s) {
+        var HTML_DECODE = {
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&nbsp;": " ",
+            "&quot;": "\"",
+            "&copy;": "",
+            // Add more
+        };
+
+        var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g;
+
+        var REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+        var REGX_TRIM = /(^\s*)|(\s*$)/g;
+
+        s = (s != undefined) ? s : "";
+        return (typeof s != "string") ? s :
+            s.replace(REGX_HTML_DECODE,
+                function ($0, $1) {
+                    var c = HTML_DECODE[$0];
+                    if (c == undefined) {
+                        // Maybe is Entity Number
+                        if (!isNaN($1)) {
+                            c = String.fromCharCode(($1 == 160) ? 32 : $1);
+                        } else {
+                            c = $0;
+                        }
+                    }
+                    return c;
+                });
+    };
+</script>
+
+<!--视频-->
+<script type="text/javascript">
+    var videoIcon = document.getElementById("video_icon");
+    var closeIcon = document.getElementById("close_Icon");
+    var light = document.getElementById("light");
+    var embed = document.getElementsByTagName('embed')[0];
+    var video = document.getElementsByTagName('video')[0];
+
+    //打开弹出层
+    if (videoIcon != null) {
+        videoIcon.onclick = function (e) {
+            var point = getPointerPosition(e);  //获取鼠标点击按钮的位置，将其作为弹出层的top值
+            light.style.top = point.top + "px";
+            light.style.height = document.body.clientHeight * 0.9 + "px";
+            embed.style.height = document.body.clientHeight * 0.86 + "px";
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            //video.play();
+        }
+    }
+
+    //关闭弹出层
+    if (closeIcon != null) {
+        closeIcon.onclick = function () {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //video.pause();
+        }
+    }
+
+    //暂停/播放
+    if (video != null) {
+        video.onclick = function () {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    }
+
+    //获取鼠标点击位置
+    function getPointerPosition(e) {
+
+        var obj = e.currentTarget || document.activeElement;
+        var position = {
+            left: e.pageX || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft)),
+            top: e.pageY || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop))
+        };
+        return position;
+    }
+</script>
+<script>
+    var url;
+    var id=getUrlParms('id');
+    var vm = new Vue({
+        el:"#page",
+        data:{
+            listTop:[],
+            listBottom:[]
+        },
+        created:function () {
+            this.dataTableList();
+            this.listTop = JSON.parse(sessionStorage.getItem("listTop"));
+            this.listBottom = JSON.parse(sessionStorage.getItem("listBottom"));
+        },
+        mounted:function () {
+
+        },
+        methods:{
+            dataTableList:function () {
+                let dataStr = {
+                    id:id
+                };
+                url="/web/info";
+                ajax.data("post",true,url,"json",dataStr,function (data) {
+
+                })
+            },
+        }
+    })
+</script>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>中科联云</title>
+    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/mystyle.css" type="text/css" media="all" />
+    <link rel='stylesheet' href='/newStatic/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/buttons.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/index.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/lightgallery.css' type='text/css' media='all' />
+
+    <!--[if lt IE 9]>
+    <script src="/newStatic/js/html5shiv.js"></script>
+    <script src="/newStatic/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 7]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 6]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 5]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var onepress_js_settings = { "onepress_disable_animation": "", "onepress_disable_sticky_header": "", "onepress_vertical_align_menu": "", "hero_animation": "flipInX", "hero_speed": "5000", "hero_fade": "750", "hero_duration": "5000", "is_home": "", "gallery_enable": "1" };
+        /* ]]> */
+    </script>
+
+    <script type='text/javascript' src='/newStatic/js/jquery.js'></script>
+    <script type='text/javascript' src='/newStatic/js/myjs.js'></script>
+    <script type='text/javascript' src='/newStatic/js/jquery-migrate.min.js'></script>
+
+</head>
+
+<body class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-4 wp-custom-logo sticky-header no-header-transparent">
+<div id="page" class="hfeed site">
+    <!--头部-->
+    <header id="masthead" class="site-header fixed" role="banner">
+        <div class="container">
+            <!--logo-->
+            <div class="site-branding">
+                <div class="site-brand-inner has-logo-img no-desc">
+                    <div class="site-logo-div">
+                        <a href="/" class="custom-logo-link"><img height="66" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                    </div>
+                </div>
+            </div>
+            <!--end logo-->
+            <!--导航-->
+            <div class="header-right-wrapper">
+                <a href="#0" id="nav-toggle">Menu<span></span></a>
+                <nav id="site-navigation" class="main-navigation">
+                    <ul class="onepress-menu">
+                        <li v-for="list in listTop" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a onclick="changeHtml(this)">{{list.name}}</a>
+                            <input type="hidden" v-bind:value="list.id">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--end 导航 -->
+        </div>
+    </header>
+    <!--end 头部-->
+    <!--中间内容-->
+    <div id="content" class="site-content">
+
+
+
+        <main id="main" class="site-main" role="main">
+            <!--banner图-->
+            <section id="hero" data-images="[&quot;/Content/banner/观点.jpg&quot;]" class="hero-slideshow-wrapper hero-slideshow-normal">
+                <!--加载中图标-->
+                <div class="slider-spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+
+                <!--banner图文字-->
+                <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
+                </div>
+            </section>
+
+            <div class="content">
+                <!--案例-->
+                <section id="services" class="section-services section-padding  section-meta  onepage-section">
+                    <div class="container">
+                        <div class="section-title-area">
+                            <h2 class="section-title"></h2>
+                        </div>
+                        <div class="row">
+                            <!--案例-->
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">中车戚墅堰</h4>
+                                        </a>
+                                        <p>过程可追溯，提高生产效率、降低制造成本、提升生产管控水平</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">中车浦镇</h4>
+                                        </a>
+                                        <p>建立了工位制为核心的企业级信息化管理平台</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">西电操动机构</h4>
+                                        </a>
+                                        <p>提高产品的完工准时化率10～20%，改善产品质量20%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">烽火通信</h4>
+                                        </a>
+                                        <p>实现MES与ERP、PLM、B2B、SRM等系统进行集成</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">中航工业</h4>
+                                        </a>
+                                        <p>实现产品加工全过程质量跟踪与控制</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">东方电机</h4>
+                                        </a>
+                                        <p>打通企业生产计划与制造执行间的业务环节</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">南瑞集团</h4>
+                                        </a>
+                                        <p>通过系统集成实现统一平台，将业务流程形成一个闭环</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                                <div class="service-item ">
+                                    <div class="service-image">
+                                        <a href="javascript:void (0)">
+                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="javascript:void (0)">
+                                            <h4 class="service-title">CETC某所</h4>
+                                        </a>
+                                        <p>实现对航天产品生产过程数据包的采集</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--end 案例-->
+            </div>
+        </main>
+
+    </div>
+    <!-- end 中间内容 -->
+    <!--底部-->
+    <footer class="site-footer">
+        <div class="footer-connect">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-left col-sm-8" style="z-index:9999;">
+                        <dl v-for="list in listBottom">
+                            <dt>
+                                <a href="javascript:void (0)">{{list.name}}</a>
+                            </dt>
+                            <dd v-for="list1 in list.infos">
+                                <a href="javascript:void (0)">
+                                    {{list1.title}}
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="footer-left col-sm-4">
+
+                            <div class="share col-sm-5" style="text-align:center;margin:15px">
+                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
+                                官方微信
+                            </div>
+                        </div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+    </footer>
+    <!--end 底部-->
+</div><!-- #page -->
+<div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
+<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
+<script type='text/javascript' src='/newStatic/js/plugins.js'></script>
+<script type='text/javascript' src='/newStatic/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/jquery.superslide.2.1.1.js'></script>
+<script type='text/javascript' src='/newStatic/js/theme.js'></script>
+<script type="text/javascript" src="/newStatic/js/vue.min.js"></script>
+<script type="text/javascript" src="/newStatic/js/plugin.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?721d35f06ef55f9520c9c87094e876e1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
+
+<!--Banner和文字-->
+<script type="text/javascript">
+    (function () {
+        //Banner图
+        var bannerDiv = document.getElementById("hero");
+        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=33B9E7E71C524164A7ADA39AFC368DAB&quot;]';
+        bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
+
+        //Banner文字
+        var bannerText = '',
+            containerDiv = document.getElementById("bannerText"),
+            decodeBannerText = decodeHtml(bannerText);
+        if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
+            decodeBannerText = decodeBannerText.replace(new RegExp("<p>", "gm"), "").replace(new RegExp("</p>", "gm"), "");
+            decodeBannerText = decodeBannerText.replace(new RegExp("<a href=", "gm"), "</p><a href=");
+            containerDiv.innerHTML = containerDiv.innerHTML + decodeBannerText;
+        }
+
+        //bodyInnerHtml
+        var bodyInnerHTML = document.body.innerHTML;
+        document.body.innerHTML = bodyInnerHTML.replace(/\ufeff/g, '');
+    })();
+
+    function decodeHtml(s) {
+        var HTML_DECODE = {
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&nbsp;": " ",
+            "&quot;": "\"",
+            "&copy;": "",
+            // Add more
+        };
+
+        var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g;
+
+        var REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+        var REGX_TRIM = /(^\s*)|(\s*$)/g;
+
+        s = (s != undefined) ? s : "";
+        return (typeof s != "string") ? s :
+            s.replace(REGX_HTML_DECODE,
+                function ($0, $1) {
+                    var c = HTML_DECODE[$0];
+                    if (c == undefined) {
+                        // Maybe is Entity Number
+                        if (!isNaN($1)) {
+                            c = String.fromCharCode(($1 == 160) ? 32 : $1);
+                        } else {
+                            c = $0;
+                        }
+                    }
+                    return c;
+                });
+    };
+</script>
+
+<!--视频-->
+<script type="text/javascript">
+    var videoIcon = document.getElementById("video_icon");
+    var closeIcon = document.getElementById("close_Icon");
+    var light = document.getElementById("light");
+    var embed = document.getElementsByTagName('embed')[0];
+    var video = document.getElementsByTagName('video')[0];
+
+    //打开弹出层
+    if (videoIcon != null) {
+        videoIcon.onclick = function (e) {
+            var point = getPointerPosition(e);  //获取鼠标点击按钮的位置，将其作为弹出层的top值
+            light.style.top = point.top + "px";
+            light.style.height = document.body.clientHeight * 0.9 + "px";
+            embed.style.height = document.body.clientHeight * 0.86 + "px";
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            //video.play();
+        }
+    }
+
+    //关闭弹出层
+    if (closeIcon != null) {
+        closeIcon.onclick = function () {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //video.pause();
+        }
+    }
+
+    //暂停/播放
+    if (video != null) {
+        video.onclick = function () {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    }
+
+    //获取鼠标点击位置
+    function getPointerPosition(e) {
+
+        var obj = e.currentTarget || document.activeElement;
+        var position = {
+            left: e.pageX || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft)),
+            top: e.pageY || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop))
+        };
+        return position;
+    }
+</script>
+<script>
+    var url;
+    var id=getUrlParms('id');
+    var vm = new Vue({
+        el:"#page",
+        data:{
+            listTop:[],
+            listBottom:[]
+        },
+        created:function () {
+            this.dataTableList();
+            this.listTop = JSON.parse(sessionStorage.getItem("listTop"));
+            this.listBottom = JSON.parse(sessionStorage.getItem("listBottom"));
+        },
+        mounted:function () {
+
+        },
+        methods:{
+            dataTableList:function () {
+                let dataStr = {
+                    id:id
+                };
+                url="/web/info";
+                ajax.data("post",true,url,"json",dataStr,function (data) {
+
+                })
+            },
+        }
+    })
+</script>

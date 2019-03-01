@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>中科联云</title>
+    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/mystyle.css" type="text/css" media="all" />
+    <link rel='stylesheet' href='/newStatic/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/buttons.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/index.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/lightgallery.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <script src="/newStatic/js/html5shiv.js"></script>
+    <script src="/newStatic/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 7]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 6]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 5]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+
+
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var onepress_js_settings = { "onepress_disable_animation": "", "onepress_disable_sticky_header": "", "onepress_vertical_align_menu": "", "hero_animation": "flipInX", "hero_speed": "5000", "hero_fade": "750", "hero_duration": "5000", "is_home": "", "gallery_enable": "1" };
+        /* ]]> */
+    </script>
+
+
+    <script type='text/javascript' src='/newStatic/js/jquery.js'></script>
+    <script type='text/javascript' src='/newStatic/js/myjs.js'></script>
+    <script type='text/javascript' src='/newStatic/js/jquery-migrate.min.js'></script>
+
+</head>
+
+<body class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-4 wp-custom-logo sticky-header no-header-transparent">
+<div id="page" class="hfeed site">
+    <!--头部-->
+    <header id="masthead" class="site-header fixed" role="banner">
+        <div class="container">
+            <!--logo-->
+            <div class="site-branding">
+                <div class="site-brand-inner has-logo-img no-desc">
+                    <div class="site-logo-div">
+                        <a href="/" class="custom-logo-link"><img height="66" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                    </div>
+                </div>
+            </div>
+            <!--end logo-->
+            <!--导航-->
+            <div class="header-right-wrapper">
+                <a href="#0" id="nav-toggle">Menu<span></span></a>
+                <nav id="site-navigation" class="main-navigation">
+                    <ul class="onepress-menu">
+                        <li v-for="list in listTop" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a onclick="changeHtml(this)">{{list.name}}</a>
+                            <input type="hidden" v-bind:value="list.id">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--end 导航 -->
+        </div>
+    </header>
+    <!--end 头部-->
+    <!--中间内容-->
+    <div id="content" class="site-content">
+
+
+
+        <main id="main" class="site-main" role="main">
+            <!--banner图-->
+            <section id="hero" data-images="[&quot;/Content/banner/观点.jpg&quot;]" class="hero-slideshow-wrapper hero-slideshow-normal">
+                <!--加载中图标-->
+                <div class="slider-spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+
+                <!--banner图文字-->
+                <div class="container" style="padding-top:23%;color:#fff">
+
+                </div>
+            </section>
+
+            <div class="content">
+                <!--我们的观点-->
+                <section class="section-viewPoint section-padding section-meta onepage-section">
+                    <div class="container">
+                        <div class="section-title-area">
+                            <h2 class="section-title"></h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">智能制造实现之路：“三化融合”</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:hidden">精益化为思想、信息化为神经网络、自动化为四肢，构建出智能工厂有机体，为企业在智能制造转型中实现价值的落地</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">装备制造如何实现拉动式生产</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:overlay">“拉动”式生产是以准时管理为核心的精益制造体系的中心思想之一。真正实现拉式生产，需要整个企业内部上下游，甚至供应链整体水平的同步提升。在生产线上看任何一道工序，都不能将其孤立在生产线之外。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">探索构建新型精益体系的新模式</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:hidden">从中国制造业的演进路线来看，我们认为中国制造业发展需要经历三个阶段，即传统制造阶段、数字化制造阶段和智能制造阶段。而无论企业处于哪个发展阶段，精益管理都是贯穿全局的“灵魂”所在。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">看德国大师如何评价工业4.0</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:overlay">佰思杰作为中国智能制造领域领先的整体解决方案提供商，应邀参加了“德国萨克森州工业4.0培训活动”。佰思杰CEO刘朱锋先生依据自己多年的行业经验，结合行程中的所见所闻，进行了提炼和总结，现整理成文，此文为第一篇。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">大众透明工厂之所思（上篇）</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:hidden">佰思杰 CEO 刘朱锋先生于2017年4月参观完大众透明工厂曾写过一篇小短文，但细思之后总觉得并没有探究辉腾停产的深层次原因，于是他就此事展开了进一步的讨论和思考，并撰写成文。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">浅谈传统制造到智能制造的蜕变之路</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:overlay">佰思杰一直致力于将先进的管理思想和理念与中国制造业的实际情况相结合，积极探索中国制造实现智能制造之路，助力中国制造企业实现经营管理的持续改进和制造水平的不断提升。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">大众透明工厂之所思（下篇）</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:hidden">佰思杰 CEO 刘朱锋先生于2017年4月份参观完大众透明工厂曾写过一篇小短文，但细思之后总觉得并没有探究辉腾停产的深层次原因，于是他就此事展开了进一步的讨论和思考，并撰写成文。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">智能制造之眼——佰思杰科技推出机器视觉解决方案</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:overlay">工业4.0离不开智能制造，智能制造离不开机器视觉。机器视觉是人工智能正在快速发展的一个分支。简单说来，机器视觉就是用机器代替人眼来做测量和判断。机器视觉解决方案已成为佰思杰科技智能产线解决方案的重要组成部分，结合我们的智能排程、智能生产、智能仓储、智能配送、预防性维护、精益供应协同等产品和解决方案，助您的制造变得更智能。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">虚拟现实在佰思杰智能制造解决方案中的应用</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:hidden">虚拟现实与真实工厂进行融合，在虚拟世界中融合了真实工厂的信息，并允许通过虚拟世界控制真实世界，实现虚拟与现实的互动，相互作用、相互影响，形成闭环，极大改善了用户体验。</p></div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6  wow slideInUp">
+                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)">
+                                        <h4 class="itemAlign">走进宝马莱比锡工厂</h4>
+                                    </a>
+                                    <div class="feature-item-content"><p style="height:90px;overflow:overlay">佰思杰作为中国智能制造领域领先的整体解决方案提供商，应邀参加了“德国萨克森州工业4.0培训活动”。佰思杰CEO刘朱锋先生依据自己多年的行业经验，结合行程中的所见所闻，进行了提炼和总结，现整理成文，此文为第二篇。</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--end 我们的观点-->
+            </div>
+        </main>
+
+
+    </div>
+    <!-- end 中间内容 -->
+    <!--底部-->
+    <footer class="site-footer">
+        <div class="footer-connect">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-left col-sm-8" style="z-index:9999;">
+                        <dl v-for="list in listBottom">
+                            <dt>
+                                <a href="javascript:void (0)">{{list.name}}</a>
+                            </dt>
+                            <dd v-for="list1 in list.infos">
+                                <a href="javascript:void (0)">
+                                    {{list1.title}}
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="footer-left col-sm-4">
+
+                            <div class="share col-sm-5" style="text-align:center;margin:15px">
+                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
+                                官方微信
+                            </div>
+                        </div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+    </footer>
+    <!--end 底部-->
+</div><!-- #page -->
+<div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
+<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
+<script type='text/javascript' src='/newStatic/js/plugins.js'></script>
+<script type='text/javascript' src='/newStatic/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/jquery.superslide.2.1.1.js'></script>
+<script type='text/javascript' src='/newStatic/js/theme.js'></script>
+<script type="text/javascript" src="/newStatic/js/vue.min.js"></script>
+<script type="text/javascript" src="/newStatic/js/plugin.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?721d35f06ef55f9520c9c87094e876e1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
+
+<!--Banner和文字-->
+<script type="text/javascript">
+    (function () {
+        //Banner图
+        var bannerDiv = document.getElementById("hero");
+        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=97B27691E286461D8A363E60C1D9470A&quot;]';
+        bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
+
+        //Banner文字
+        var bannerText = '',
+            containerDiv = document.getElementById("bannerText"),
+            decodeBannerText = decodeHtml(bannerText);
+        if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
+            decodeBannerText = decodeBannerText.replace(new RegExp("<p>", "gm"), "").replace(new RegExp("</p>", "gm"), "");
+            decodeBannerText = decodeBannerText.replace(new RegExp("<a href=", "gm"), "</p><a href=");
+            containerDiv.innerHTML = containerDiv.innerHTML + decodeBannerText;
+        }
+
+        //bodyInnerHtml
+        var bodyInnerHTML = document.body.innerHTML;
+        document.body.innerHTML = bodyInnerHTML.replace(/\ufeff/g, '');
+    })();
+
+    function decodeHtml(s) {
+        var HTML_DECODE = {
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&nbsp;": " ",
+            "&quot;": "\"",
+            "&copy;": "",
+            // Add more
+        };
+
+        var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g;
+
+        var REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+        var REGX_TRIM = /(^\s*)|(\s*$)/g;
+
+        s = (s != undefined) ? s : "";
+        return (typeof s != "string") ? s :
+            s.replace(REGX_HTML_DECODE,
+                function ($0, $1) {
+                    var c = HTML_DECODE[$0];
+                    if (c == undefined) {
+                        // Maybe is Entity Number
+                        if (!isNaN($1)) {
+                            c = String.fromCharCode(($1 == 160) ? 32 : $1);
+                        } else {
+                            c = $0;
+                        }
+                    }
+                    return c;
+                });
+    };
+</script>
+
+<!--视频-->
+<script type="text/javascript">
+    var videoIcon = document.getElementById("video_icon");
+    var closeIcon = document.getElementById("close_Icon");
+    var light = document.getElementById("light");
+    var embed = document.getElementsByTagName('embed')[0];
+    var video = document.getElementsByTagName('video')[0];
+
+    //打开弹出层
+    if (videoIcon != null) {
+        videoIcon.onclick = function (e) {
+            var point = getPointerPosition(e);  //获取鼠标点击按钮的位置，将其作为弹出层的top值
+            light.style.top = point.top + "px";
+            light.style.height = document.body.clientHeight * 0.9 + "px";
+            embed.style.height = document.body.clientHeight * 0.86 + "px";
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            //video.play();
+        }
+    }
+
+    //关闭弹出层
+    if (closeIcon != null) {
+        closeIcon.onclick = function () {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //video.pause();
+        }
+    }
+
+    //暂停/播放
+    if (video != null) {
+        video.onclick = function () {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    }
+
+    //获取鼠标点击位置
+    function getPointerPosition(e) {
+
+        var obj = e.currentTarget || document.activeElement;
+        var position = {
+            left: e.pageX || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft)),
+            top: e.pageY || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop))
+        };
+        return position;
+    }
+</script>
+<script>
+    var url;
+    var id=getUrlParms('id');
+    var vm = new Vue({
+        el:"#page",
+        data:{
+            listTop:[],
+            listBottom:[]
+        },
+        created:function () {
+            this.dataTableList();
+            this.listTop = JSON.parse(sessionStorage.getItem("listTop"));
+            this.listBottom = JSON.parse(sessionStorage.getItem("listBottom"));
+        },
+        mounted:function () {
+
+        },
+        methods:{
+            dataTableList:function () {
+                let dataStr = {
+                    id:id
+                };
+                url="/web/info";
+                ajax.data("post",true,url,"json",dataStr,function (data) {
+
+                })
+            },
+        }
+    })
+</script>

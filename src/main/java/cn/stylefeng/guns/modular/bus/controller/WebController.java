@@ -37,7 +37,7 @@ public class WebController {
     //页面跳转
     //产品
     @RequestMapping("/product")
-    public String product(Model model,Integer id) {
+    public String product1(Model model,Integer id) {
         model.addAttribute("id",id);
         return PREFIX + "product.html ";
     }
@@ -61,7 +61,7 @@ public class WebController {
     }
     //服务
     @RequestMapping("/service")
-    public String service(Model model,Integer id) {
+    public String service1(Model model,Integer id) {
         model.addAttribute("id",id);
         return PREFIX + "service.html ";
     }

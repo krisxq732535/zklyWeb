@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.mapper.Wrapper;
 import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,12 +27,51 @@ import java.util.Map;
 @Controller()
 @RequestMapping("/web")
 public class WebController {
-
+    private String PREFIX = "/front/";
     @Autowired
     private ITitleService titleService;
 
     @Autowired
     private IInfoService infoService;
+
+    //页面跳转
+    //产品
+    @RequestMapping("/product")
+    public String product(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "product.html ";
+    }
+    //观点
+    @RequestMapping("/viewpoint")
+    public String viewpoint(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "viewpoint.html ";
+    }
+    //案例
+    @RequestMapping("/case")
+    public String toCase(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "case.html ";
+    }
+    //服务
+    @RequestMapping("/service")
+    public String service(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "service.html ";
+    }
+    //联系我们
+    @RequestMapping("/connection")
+    public String connection(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "connection.html ";
+    }
+    //产品
+    @RequestMapping("/product")
+    public String titleAdd(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "product.html ";
+    }
+
 
     //获取全部菜单栏,和底部子菜单栏
     @RequestMapping("menu")
@@ -51,9 +91,7 @@ public class WebController {
         Title title = titleService.selectById(id);
         if (title.getPid()==0){
 
-
         }
-
         Wrapper<Title> wrapper = new EntityWrapper<Title>();
         wrapper.eq("pid",id);
         wrapper.orderBy("sort_order");

@@ -41,6 +41,12 @@ public class WebController {
         model.addAttribute("id",id);
         return PREFIX + "product.html ";
     }
+    //方案
+    @RequestMapping("/project")
+    public String project(Model model,Integer id) {
+        model.addAttribute("id",id);
+        return PREFIX + "project.html ";
+    }
     //观点
     @RequestMapping("/viewpoint")
     public String viewpoint(Model model,Integer id) {
@@ -65,13 +71,6 @@ public class WebController {
         model.addAttribute("id",id);
         return PREFIX + "connection.html ";
     }
-    //产品
-    @RequestMapping("/product")
-    public String titleAdd(Model model,Integer id) {
-        model.addAttribute("id",id);
-        return PREFIX + "product.html ";
-    }
-
 
     //获取全部菜单栏,和底部子菜单栏
     @RequestMapping("menu")

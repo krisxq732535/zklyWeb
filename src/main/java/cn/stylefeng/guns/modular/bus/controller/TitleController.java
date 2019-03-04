@@ -38,7 +38,10 @@ public class TitleController extends BaseController {
 
     @Autowired
     private ITitleService titleService;
-
+    @RequestMapping("/toPage")
+    public String toPage() {
+        return PREFIX + "web_title.html";
+    }
     /**
      * 跳转到标题首页
      */

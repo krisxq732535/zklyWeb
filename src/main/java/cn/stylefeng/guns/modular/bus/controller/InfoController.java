@@ -36,6 +36,10 @@ public class InfoController extends BaseController {
     private static GunsProperties properties = SpringContextHolder.getBean(GunsProperties.class);
     @Autowired
     private IInfoService infoService;
+    @RequestMapping("/toPage")
+    public String toPage() {
+        return PREFIX + "web_info.html";
+    }
 
     /**
      * 跳转到内容首页

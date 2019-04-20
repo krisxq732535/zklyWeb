@@ -15,6 +15,7 @@
  */
 package cn.stylefeng.guns.core.beetl;
 
+import cn.stylefeng.guns.config.properties.GunsProperties;
 import cn.stylefeng.guns.core.tag.DictSelectorTag;
 import cn.stylefeng.guns.core.util.KaptchaUtil;
 import cn.stylefeng.roses.core.util.ToolUtil;
@@ -26,6 +27,8 @@ import org.springframework.core.env.Environment;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * beetl拓展配置,绑定一些工具类,方便在模板中直接调用
@@ -40,6 +43,9 @@ public class BeetlConfiguration extends BeetlGroupUtilConfiguration {
 
     @Autowired
     private DictSelectorTag dictSelectorTag;
+
+    @Autowired
+    private GunsProperties properties;
 
     @Override
     public void initOther() {
@@ -70,5 +76,8 @@ public class BeetlConfiguration extends BeetlGroupUtilConfiguration {
                 }
             }
         });
+        Map<String, Object> map = new HashMap<>();
+        map.put("fileServerUrl", properties.getFileServerUrl());
+        groupTemplate.setSharedVars(map);
     }
 }

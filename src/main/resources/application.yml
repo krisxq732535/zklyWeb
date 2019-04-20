@@ -1,5 +1,5 @@
 server:
-  port: 8989
+  port: 1033
 
 guns:
   swagger-open: true              #是否开启swagger (true/false)
@@ -8,7 +8,7 @@ guns:
   spring-session-open: false      #是否开启spring session,如果是多机环境需要开启(true/false)
   session-invalidate-time: 1800     #session失效时间(只在单机环境下生效，多机环境在SpringSessionConfig类中配置) 单位：秒
   session-validation-interval: 900  #多久检测一次失效的session(只在单机环境下生效) 单位：秒
-  file_server_url: http://127.0.0.1:1029
+  file_server_url: /kaptcha
 
 beetl:
   resource-auto-check: true       #热加载beetl模板，开发时候用
@@ -83,8 +83,9 @@ spring:
 spring:
   profiles: produce
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/db_zkly?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    url: jdbc:mysql://127.0.0.1:3369/db_zkly?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
     username: root
-    password: root
+    password: Zklywh@163.com
     filters: wall,mergeStat
-
+guns:
+  file-upload-path: /root/zkly/upload

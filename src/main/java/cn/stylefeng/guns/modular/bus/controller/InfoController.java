@@ -5,6 +5,8 @@ import cn.stylefeng.guns.core.shiro.ShiroKit;
 import cn.stylefeng.guns.core.util.DateUtils;
 import cn.stylefeng.guns.core.util.FileUtils;
 import cn.stylefeng.guns.core.util.StringUtil2;
+import cn.stylefeng.guns.modular.bus.model.Title;
+import cn.stylefeng.guns.modular.bus.service.ITitleService;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.util.SpringContextHolder;
 import org.springframework.stereotype.Controller;
@@ -36,6 +38,8 @@ public class InfoController extends BaseController {
     private static GunsProperties properties = SpringContextHolder.getBean(GunsProperties.class);
     @Autowired
     private IInfoService infoService;
+    @Autowired
+    private ITitleService titleService;
     @RequestMapping("/toPage")
     public String toPage() {
         return PREFIX + "web_info.html";
@@ -53,7 +57,9 @@ public class InfoController extends BaseController {
      * 跳转到添加内容
      */
     @RequestMapping("/info_add")
-    public String infoAdd() {
+    public String infoAdd(Model model) {
+        List<Title> titles = titleService.selectList(null);
+        model.addAttribute("titles",titles);
         return PREFIX + "info_add.html";
     }
 
@@ -67,6 +73,8 @@ public class InfoController extends BaseController {
             info.setIconPath(properties.getFileServerUrl()+info.getIconPath());
         }
         model.addAttribute("item",info);
+        List<Title> titles = titleService.selectList(null);
+        model.addAttribute("titles",titles);
         LogObjectHolder.me().set(info);
         return PREFIX + "info_edit.html";
     }
@@ -93,11 +101,11 @@ public class InfoController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    public Object add(Info info ,MultipartFile file) throws Exception {
-        if (!file.isEmpty()){
-            String uploads = FileUtils.uploads("/title", file);
-            info.setIconPath(uploads);
-        }
+    public Object add(Info info) throws Exception {
+//        if (!file.isEmpty()){
+//            String uploads = FileUtils.uploads("/title", file);
+//            info.setIconPath(uploads);
+//        }
         info.setCreateTime(DateUtils.getTodayString());
         info.setCreateUser(ShiroKit.getUser().getId()+"");
         infoService.insert(info);

@@ -7,6 +7,18 @@
                 <div class="col-sm-6 b-r">
                     <#input id="id" name="" value="${item.id}" type='hidden' />
                             <#input id="type" name="所属类型" value="${item.type}" underline="true"/>
+                            <#select id="type" name="所属类型" underline="true">
+                            @for(i in titles){
+                            <option value="${i.id}"
+                                    @if(item.type==i.id){
+                                    selected
+                                    @}
+
+                            >
+                                ${i.name}
+                            </option>
+                            @}
+                            </#select>
                             <#input id="title" name="内容名字" value="${item.title}" underline="true"/>
                             <img width="100px" height="100px" src="${item.iconPath}" underline="true">
                             <#input type='file'  id="file" name="替换图片" underline="true"/>

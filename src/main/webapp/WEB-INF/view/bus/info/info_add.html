@@ -1,17 +1,24 @@
 @layout("/common/_container.html"){
 <div class="ibox float-e-margins">
     <div class="ibox-content">
-        <form  method="post" id="forms" enctype="multipart/form-data">
+        <form  method="post" id="forms">
         <div class="form-horizontal">
 
             <div class="row">
                 <div class="col-sm-6 b-r">
-                            <#input id="type" name="所属类型" underline="true"/>
-                            <#input id="title" name="内容名字" underline="true"/>
-                            <#input type='file'  id="file" name="上传图标" underline="true"/>
-                            <#input id="content" name="文本" underline="true"/>
+                            <#select id="type" name="类型" underline="true">
+                            @for(item in titles){
+                            <option value="${item.id}">
+                                ${item.name}
+                            </option>
+                            @}
+                            </#select>
+                            <#input id="title" name="标题" underline="true"/>
+
+                            <!--<#input type='file'  id="file" name="上传图标" underline="true"/>-->
                             <#input id="desc" name="简介" underline="true"/>
-                           <!-- <#input id="hot" name="浏览量"/>-->
+
+                <!-- <#input id="hot" name="浏览量"/>-->
                 </div>
 
                 <div class="col-sm-6">
@@ -19,8 +26,10 @@
                             <#input id="createTime" name="创建时间" underline="true"/>
                             <#input id="modifyUser" name="修改人" underline="true"/>
                             <#input id="modifyTime" name="修改时间" underline="true"/>-->
-                            <#input id="isMenu" name="0不在底部显示 1在底部显示" underline="true"/>
-                            <#input id="sortOrder" name="顺序" underline="true"/>
+                            <!--<#input id="isMenu" name="0不在底部显示 1在底部显示" underline="true"/>-->
+                            <!--<#input id="sortOrder" name="顺序" underline="true"/>-->
+                    <#avatar id="iconPath" name="图片" underline="true"/>
+                    <#input id="content" name="内容" underline="true"/>
                 </div>
             </div>
 

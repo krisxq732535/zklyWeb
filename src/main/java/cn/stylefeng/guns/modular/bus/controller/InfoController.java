@@ -35,7 +35,8 @@ import java.util.List;
 public class InfoController extends BaseController {
 
     private String PREFIX = "/bus/info/";
-    private static GunsProperties properties = SpringContextHolder.getBean(GunsProperties.class);
+    @Autowired
+    private  GunsProperties properties;
     @Autowired
     private IInfoService infoService;
     @Autowired

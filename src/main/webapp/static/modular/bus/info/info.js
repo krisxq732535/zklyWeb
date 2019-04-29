@@ -14,10 +14,10 @@ var Info = {
 Info.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: 'id', field: 'id', visible: true, align: 'center', valign: 'middle'},
-            {title: '所属类型', field: 'type', visible: true, align: 'center', valign: 'middle'},
+            //{title: 'id', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: '所属类型', field: 'typeName', visible: true, align: 'center', valign: 'middle'},
             {title: '内容名字', field: 'title', visible: true, align: 'center', valign: 'middle'},
-            {title: '图标路径', field: 'iconPath', visible: true, align: 'center', valign: 'middle'},
+            {title: '图片', field: 'iconPath', visible: true, align: 'center', valign: 'middle'},
             {title: '文本', field: 'content', visible: true, align: 'center', valign: 'middle'},
             {title: '简介', field: 'desc', visible: true, align: 'center', valign: 'middle'},
             {title: '浏览量', field: 'hot', visible: true, align: 'center', valign: 'middle'},
@@ -26,7 +26,7 @@ Info.initColumn = function () {
             {title: '修改人', field: 'modifyUser', visible: true, align: 'center', valign: 'middle'},
             {title: '修改时间', field: 'modifyTime', visible: true, align: 'center', valign: 'middle'},*/
             {title: '0不在底部显示 1在底部显示', field: 'isMenu', visible: true, align: 'center', valign: 'middle'},
-           /* {title: '顺序', field: 'sortOrder', visible: true, align: 'center', valign: 'middle'}*/
+            {title: '顺序', field: 'sortOrder', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 

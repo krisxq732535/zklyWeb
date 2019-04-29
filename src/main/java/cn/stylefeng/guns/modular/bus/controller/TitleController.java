@@ -7,6 +7,8 @@ import cn.stylefeng.guns.core.util.FileUtils;
 import cn.stylefeng.guns.core.util.StringUtil2;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.util.SpringContextHolder;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,7 +57,11 @@ public class TitleController extends BaseController {
      * 跳转到添加标题
      */
     @RequestMapping("/title_add")
-    public String titleAdd() {
+    public String titleAdd(Model model) {
+        Wrapper<Title> wrapper = new EntityWrapper<Title>();
+        wrapper.eq("pid",0);
+        List<Title> titles = titleService.selectList(wrapper);
+        model.addAttribute("titles",titles);
         return PREFIX + "title_add.html";
     }
 
@@ -64,9 +70,13 @@ public class TitleController extends BaseController {
      */
     @RequestMapping("/title_update/{titleId}")
     public String titleUpdate(@PathVariable Integer titleId, Model model) {
+        Wrapper<Title> wrapper = new EntityWrapper<Title>();
+        wrapper.eq("pid",0);
+        List<Title> titles = titleService.selectList(wrapper);
         Title title = titleService.selectById(titleId);
         title.setFilePath(properties.getFileServerUrl()+title.getFilePath());
         model.addAttribute("item",title);
+        model.addAttribute("titles",titles);
         LogObjectHolder.me().set(title);
         return PREFIX + "title_edit.html";
     }
@@ -77,11 +87,18 @@ public class TitleController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
-        //request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()
-        List<Title> titles = titleService.selectList(null);
+            Wrapper<Title> wrapper = new EntityWrapper<Title>();
+            wrapper.like(condition!=null,"name",condition);
+        List<Title> titles = titleService.selectList(wrapper);
         for (Title title : titles) {
-            if (StringUtil2.isNotEmpty(title.getFilePath())) {
-                title.setFilePath(properties.getFileServerUrl() + title.getFilePath());
+            if (title.getPid()!=0){
+                for (Title title1 : titles) {
+                    if (title.getPid()==title1.getId()){
+                        title.setPidName(title1.getName());
+                    }
+                }
+            }else {
+                title.setPidName("一级目录");
             }
         }
         return titles;
@@ -92,11 +109,7 @@ public class TitleController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    public Object add(Title title,MultipartFile file) throws Exception {
-        if (file!=null){
-            String uploads = FileUtils.uploads("/title", file);
-            title.setFilePath(uploads);
-        }
+    public Object add(Title title) throws Exception {
         title.setCreateTime(DateUtils.getTodayString());
         title.setCreateUser(ShiroKit.getUser().getId()+"");
         titleService.insert(title);
@@ -118,12 +131,10 @@ public class TitleController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public Object update(Title title, @RequestParam("file") MultipartFile file, HttpServletRequest request) throws Exception {
-        if (!file.isEmpty()){
-            //String realPath = request.getSession().getServletContext().getRealPath("/")+"/static/webImage";
-            String uploads = FileUtils.uploads("/title",file);
-            title.setFilePath(uploads);
-        }
+    public Object update(Title title) {
+
+
+
         title.setModifyTime(DateUtils.getTodayString());
         title.setModifyUser(ShiroKit.getUser().getId()+"");
         titleService.updateById(title);

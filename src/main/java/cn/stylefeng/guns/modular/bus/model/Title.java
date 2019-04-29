@@ -33,6 +33,8 @@ public class Title extends Model<Title> implements Serializable {
      * 父标题id 默认0
      */
     private Integer pid;
+    @TableField(exist = false)
+    private String pidName;
     /**
      * 图片路径
      */
@@ -71,6 +73,14 @@ public class Title extends Model<Title> implements Serializable {
     @TableField(exist = false)
     private Integer type;
     private Integer hot;
+
+    public String getPidName() {
+        return pidName;
+    }
+
+    public void setPidName(String pidName) {
+        this.pidName = pidName;
+    }
 
     public Integer getHot() {
         return hot;

@@ -36,5 +36,25 @@
         </div>
     </div>
 </div>
+<div id="summernote" ></div>
+<input type="button" onclick="tijiao()" value="提交">
 <script src="${ctxPath}/static/modular/bus/title/title.js"></script>
+ <link href="${ctxPath}/static/dist/summernote.css" rel="stylesheet">
+<script src="${ctxPath}/static/dist/summernote.min.js"></script>
+<script src="${ctxPath}/static/dist/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript">
+    $('#summernote').summernote( { lang:'zh-CN', placeholder: '请输入内容', height: 300 });
+    $('#summernote').summernote('code','8416465');
+     function tijiao () {
+         var code1= $('#summernote').summernote('code');
+         console.log(code1)
+         code1= $('#summernote').val();
+         console.log(code1)
+    }
+
+    var markupStr=$("#content").html(); $('#summernote').summernote( {
+        height: 300,
+    });
+
+</script>
 @}

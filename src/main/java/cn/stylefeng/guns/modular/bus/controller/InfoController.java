@@ -9,6 +9,8 @@ import cn.stylefeng.guns.modular.bus.model.Title;
 import cn.stylefeng.guns.modular.bus.service.ITitleService;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.util.SpringContextHolder;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -85,15 +87,23 @@ public class InfoController extends BaseController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(String condition, HttpServletRequest request) {
-        String realPath = request.getSession().getServletContext().getRealPath("/");
-        System.out.println(realPath);
-        List<Info> infos = infoService.selectList(null);
-        for (Info info : infos) {
+    public Object list(String condition) {
+        Wrapper<Info> wrapper = new EntityWrapper<Info>();
+        wrapper.like(condition!=null,"title",condition);
+        List<Info> infos = infoService.selectList(wrapper);
+        List<Title> titles = titleService.selectList(null);
+        for (Title title : titles) {
+            for (Info info : infos) {
+                if (info.getType()==title.getId()){
+                    info.setTypeName(title.getName());
+                }
+            }
+        }
+       /* for (Info info : infos) {
             if (StringUtil2.isNotEmpty(info.getIconPath())){
                 info.setIconPath(properties.getFileServerUrl()+info.getIconPath());
             }
-        }
+        }*/
         return infos;
     }
 
@@ -128,11 +138,7 @@ public class InfoController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public Object update(Info info ,MultipartFile file) throws Exception {
-        if (!file.isEmpty()){
-            String uploads = FileUtils.uploads("/title", file);
-            info.setIconPath(uploads);
-        }
+    public Object update(Info info) throws Exception {
         info.setModifyTime(DateUtils.getTodayString());
         info.setModifyUser(ShiroKit.getUser().getId()+"");
         infoService.updateById(info);

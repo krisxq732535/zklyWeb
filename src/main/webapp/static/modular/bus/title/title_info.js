@@ -65,27 +65,12 @@ TitleInfoDlg.addSubmit = function() {
     this.clearData();
     this.collectData();
     var form = new FormData(document.getElementById("forms"));
-    $.ajax({
-        url:"/title/add",
-        type:"post",
-        data:form,
-        processData:false,
-        contentType:false,
-        success:function(data){
-            if(data.code==200){
-                Feng.success("添加成功!");
-                window.parent.Title.table.refresh();
-                TitleInfoDlg.close();
-            }else {
-                Feng.error("添加失败!" + data.responseJSON.message + "!");
-            }
-            window.clearInterval(timer);
-            console.log("over..");
-        },
-        error:function(e){
-            alert("错误！！");
-            window.clearInterval(timer);
-        }
+    var ajax = new $ax(Feng.ctxPath + "/title/add", function (data) {
+        Feng.success("添加成功!");
+        window.parent.Title.table.refresh();
+        TitleInfoDlg.close();
+    }, function (data) {
+        Feng.error("添加失败!" + data.responseJSON.message + "!");
     });
     ajax.set(this.titleInfoData);
     ajax.start();
@@ -99,32 +84,18 @@ TitleInfoDlg.editSubmit = function() {
     this.collectData();
 
     var form = new FormData(document.getElementById("forms"));
-    $.ajax({
-        url:"/title/update",
-        type:"post",
-        data:form,
-        processData:false,
-        contentType:false,
-        success:function(data){
-            if(data.code==200){
-                Feng.success("修改成功!");
-                window.parent.Title.table.refresh();
-                TitleInfoDlg.close();
-            }else {
-                Feng.error("修改失败!" + data.responseJSON.message + "!");
-            }
-            window.clearInterval(timer);
-            console.log("over..");
-        },
-        error:function(e){
-            alert("错误！！");
-            window.clearInterval(timer);
-        }
+    var ajax = new $ax(Feng.ctxPath + "/title/update", function (data) {
+        Feng.success("修改成功!");
+        window.parent.Title.table.refresh();
+        TitleInfoDlg.close();
+    }, function (data) {
+        Feng.error("修改失败!" + data.responseJSON.message + "!");
     });
     ajax.set(this.titleInfoData);
     ajax.start();
 }
 
 $(function() {
-
+        var cover = new $WebUpload("filePath");
+        cover.init();
 });

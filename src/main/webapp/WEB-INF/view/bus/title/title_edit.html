@@ -7,19 +7,28 @@
                 <div class="col-sm-6 b-r">
                     <#input id="id" name="" value="${item.id}" type='hidden' />
                     <#input id="name" name="标题名字" value="${item.name}" underline="true"/>
-                        <#input id="pid" name="父标题id 默认0" value="${item.pid}" underline="true"/>
-                        <img width="100px" height="100px" src="${item.filePath}" underline="true">
-                        <#input type='file'  id="file" name="替换图片" underline="true"/>
-                        <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
+                    <#select id="pid" name="父标题" underline="true">
+                    <option value="0">
+                        一级目录
+                    </option>
+                    @for(i in titles){
+                    @if(i.id==item.pid){
+                    <option value="${i.id}" selected>
+                        ${i.name}
+                    </option>
+                    @}
+                    @if(i.id!=item.pid){
+                    <option value="${i.id}">
+                        ${i.name}
+                    </option>
+                    @}
+                    @}
+                </#select>
 
+                    <#avatar id="filePath" name="图片" underline="true" avatarImg="${item.filePath}"/>
+                    <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
                 </div>
 
-              <!--  <div class="col-sm-6">
-                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
-                            <#input id="createUser" name="创建人" value="${item.createUser}" underline="true"/>
-                            <#input id="modifyTime" name="修改时间" value=" ${item.modifyTime}" underline="true"/>
-                            <#input id="modifyUser" name="修改人" value="   ${item.modifyUser}" />
-                </div>-->
             </div>
 
             <div class="row btn-group-m-t">

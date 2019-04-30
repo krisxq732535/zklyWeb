@@ -112,11 +112,7 @@ public class InfoController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    public Object add(Info info) throws Exception {
-//        if (!file.isEmpty()){
-//            String uploads = FileUtils.uploads("/title", file);
-//            info.setIconPath(uploads);
-//        }
+    public Object add(Info info) {
         info.setCreateTime(DateUtils.getTodayString());
         info.setCreateUser(ShiroKit.getUser().getId()+"");
         infoService.insert(info);

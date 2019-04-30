@@ -71,34 +71,16 @@ InfoInfoDlg.collectData = function() {
  * 提交添加
  */
 InfoInfoDlg.addSubmit = function() {
-
+debugger
     this.clearData();
+    var code1= $('#summernote').summernote('code');
+    $('#content').val(code1)
     this.collectData();
-    // var form = new FormData(document.getElementById("forms"));
-    // $.ajax({
-    //     url:"/info/add",
-    //     type:"post",
-    //     data:form,
-    //     processData:false,
-    //     contentType:false,
-    //     success:function(data){
-    //         if(data.code==200){
-    //             Feng.success("添加成功!");
-    //             window.parent.Info.table.refresh();
-    //             InfoInfoDlg.close();
-    //         }else {
-    //             Feng.error("添加失败!" + data.responseJSON.message + "!");
-    //         }
-    //         window.clearInterval(timer);
-    //         console.log("over..");
-    //     },
-    //     error:function(e){
-    //         alert("错误！！");
-    //         window.clearInterval(timer);
-    //     }
-    // });
+
     //提交信息
+
     var ajax = new $ax(Feng.ctxPath + "/info/add", function (data) {
+
         Feng.success("添加成功!");
         window.parent.Info.table.refresh();
         InfoInfoDlg.close();
@@ -114,6 +96,9 @@ InfoInfoDlg.addSubmit = function() {
  */
 InfoInfoDlg.editSubmit = function() {
     this.clearData();
+    debugger
+    var  code1=$('#summernote').summernote('code')
+    $('#content').val($('#summernote').summernote('code'))
     this.collectData();
     var ajax = new $ax(Feng.ctxPath + "/info/update", function (data) {
         Feng.success("修改成功!");

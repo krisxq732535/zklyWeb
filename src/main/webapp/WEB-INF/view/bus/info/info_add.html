@@ -18,7 +18,7 @@
                             <#input id="desc" name="简介" underline="true"/>
 
                 </div>
-
+            <input  id="content" type="hidden" name="文本" underline="true"/>
                 <div class="col-sm-6">
                     <#select id="isMenu" name="0不在底部显示 1在底部显示" underline="true">
                     <option value="0">0</option>
@@ -39,21 +39,7 @@
         </div>
     </div>
 </div>
+<link href="${ctxPath}/static/dist/summernote.css" rel="stylesheet">
+<script src="${ctxPath}/static/dist/summernote.js"></script>
 <script src="${ctxPath}/static/modular/bus/info/info_info.js"></script>
-<<script type="text/javascript">
-    $('#summernote').summernote( { placeholder: '请输入内容', height: 300 });
-    $('#summernote').summernote('code','8416465');
-    function tijiao () {
-        var code1= $('#summernote').summernote('code');
-        console.log(code1)
-        code1= $('#summernote').val();
-        console.log(code1)
-    }
-
-    var markupStr=$("#content").html(); $('#summernote').summernote( {
-        height: 300,
-    });
-
-</script>
-
 @}

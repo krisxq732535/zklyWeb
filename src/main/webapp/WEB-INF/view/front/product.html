@@ -119,7 +119,7 @@
                         <div class="section-content">
                             <div class="row">
                                 <!--产品列表-->
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
+                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp" v-for="info in listInfo">
                                     <div class="feature-media">
                                         <a class="fa-stack fa-5x" href="javascript:void (0)">
                                             <i class="fa fa-stack-2x icon-background-default"></i>
@@ -127,164 +127,10 @@
                                         </a>
                                     </div>
                                     <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">生产执行系统（nebula PES）</h3>
+                                        <h3 class="section_service_2_title_0">{{info.title}}</h3>
                                     </a>
                                     <div class="feature-content">
-                                        <p>对制造过程资源和活动进行规划、协调、指导、采集和管理</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">智能产线</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>佰思杰信息化系统外，已扩展到产线的规划设计和实施，形成了软硬一体化的智能制造解决方案。</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">质量管理系统（nebula QMS）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>提供了对TQM全面质量管理的支持</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">设备管理系统（nebula EAM）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>提供了对TPM全面维护管理的各项功能</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">仓储管理系统（nebula WMS）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>管理物料的存储、作业流程、软硬件设施</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">物流执行系统（nebula LES）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>构建工厂物流，实现拉动式物流执行</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">供应商关系管理(nebula SRM)</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>实现各业务的紧密协作，避免了信息孤岛</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">技术平台（nebula Technical Platform）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>企业级信息系统开发及运行平台</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">公共业务组件（nebula Backbone）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>制造运营管理套件（Nebula MOM Suite）的基底</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">物联网使能器（nebula IoT Enabler）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>实现从车间设备物联到企业、云端应用集成</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">能源管理系统（nebula EMS）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>对电力、水、气等能源的监控、分析与优化</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item col-lg-4 col-sm-6 wow slideInUp">
-                                    <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
-                                            <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void (0)">
-                                        <h3 class="section_service_2_title_0">业务智能（nebula Compass）</h3>
-                                    </a>
-                                    <div class="feature-content">
-                                        <p>实现企业级制造运营大数据分析、业务流程优化和更聪明的决策</p>
+                                        <p>{{info.desc}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -469,7 +315,8 @@
         el:"#page",
         data:{
             listTop:[],
-            listBottom:[]
+            listBottom:[],
+            listInfo:[]
         },
         created:function () {
             this.dataTableList();
@@ -484,9 +331,9 @@
                 let dataStr = {
                     id:id
                 };
-                url="/web/info";
+                url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-
+                    vm.listInfo=data.data.infos[0].infos
                 })
             },
         }

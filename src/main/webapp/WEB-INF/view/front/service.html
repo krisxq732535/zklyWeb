@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--服务-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -123,19 +124,19 @@
 
             <div class="content">
                 <!--咨询服务-->
-                <section id="service_up" class="section-about onepage-section">
+                <section v-for="info in listInfo " id="service_up" class="section-about onepage-section">
                     <div class="container section-padding">
                         <div class="section-title-area">
-                            <h2 class="section-title">咨询服务</h2>
+                            <h2 class="section-title">{{info.title}}</h2>
                         </div>
                         <div class="service-content">
-                            <p style="line-height: 1.75em; text-indent: 0em;"><span style="font-size: 16px;">全球制造业格局正在发生巨变，智能制造为我国制造企业转型和发展提供了机遇，企业在制造智能化的投资不断增长。佰思杰在与众多中国制造500强客户共同工作中形成了大量智识资产，据此以更好的咨询服务帮助更多客户实现智能制造投资收益最大化。我们提供的咨询服务有企业价值链优化、精益管理、TQM、TPM、智能制造整体规划、IT规划、智能工厂及产线规划、物流规划等。</span></p><p><br/></p>
+                            <p style="line-height: 1.75em; text-indent: 0em;"><span style="font-size: 16px;">{{info.desc}}</span></p><p><br/></p>
                         </div>
                     </div>
                 </section>
                 <!--end 咨询服务-->
                 <!--实施服务-->
-                <section id="service_center" class="section-services section-padding section-meta onepage-section">
+               <!-- <section id="service_center" class="section-services section-padding section-meta onepage-section">
                     <div class="container section-padding">
                         <div class="section-title-area">
                             <h2 class="section-title">实施服务</h2>
@@ -145,8 +146,8 @@
                         </div>
                     </div>
                 </section>
-                <!--end 实施服务-->
-                <!--运维服务-->
+                &lt;!&ndash;end 实施服务&ndash;&gt;
+                &lt;!&ndash;运维服务&ndash;&gt;
                 <section id="service_down" class="section-about section-padding onepage-section">
                     <div class="container section-padding">
                         <div class="section-title-area">
@@ -156,7 +157,7 @@
                             <p style="text-indent: 0em; line-height: 1.75em;"><span style="font-size: 16px;">今天，制造企业在新的生产技术、信息技术的投资增长超乎想象，但以10年的周期来看，用于IT/OT运维的投资是初期建设的2倍甚至更多。佰思杰与越来越多客户形成战略合作，以专业的服务团队提供定制化的运维服务，帮客户聚焦核心业务，降低运维成本。</span></p><p><br/></p>
                         </div>
                     </div>
-                </section>
+                </section>-->
                 <!--end 运维服务-->
                 }
             </div>
@@ -336,7 +337,8 @@
         el:"#page",
         data:{
             listTop:[],
-            listBottom:[]
+            listBottom:[],
+            listInfo:[]
         },
         created:function () {
             this.dataTableList();
@@ -351,9 +353,9 @@
                 let dataStr = {
                     id:id
                 };
-                url="/web/info";
+                url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-
+                    vm.listInfo=data.data.infos[0].infos
                 })
             },
         }

@@ -97,16 +97,17 @@ public class WebController {
         List<Title> titles = titleService.selectList(wrapper);
         if (titles.size()==0){
             Wrapper<Info> wrapper1 = new EntityWrapper<Info>();
-            wrapper.eq("type",id);
-            wrapper.orderBy("sort_order");
+            wrapper1.eq("type",id);
+            wrapper1.orderBy("sort_order");
             List<Info> infos = infoService.selectList(wrapper1);
             title.setInfos(infos);
             titles.add(title);
         }else {
-            Wrapper<Info> wrapper1 = new EntityWrapper<Info>();
+            Wrapper<Info> wrapper1 = null;
             for (Title title1 : titles) {
-                wrapper.eq("type",title1.getId());
-                wrapper.orderBy("sort_order");
+                wrapper1=new EntityWrapper<Info>();
+                wrapper1.eq("type",title1.getId());
+                wrapper1.orderBy("sort_order");
                 List<Info> infos = infoService.selectList(wrapper1);
                 title1.setInfos(infos);
             }

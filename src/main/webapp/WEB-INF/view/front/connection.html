@@ -125,13 +125,13 @@
 
             <div class="content">
                 <!--公司介绍-->
-                <section id="About" class="section-about section-padding onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index=='0'" id="About" class="section-about section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
-                            <h2 class="section-title">公司介绍</h2>
+                            <h2 class="section-title">{{info.name}}</h2>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-sm-6  wow">
+                            <div v-for="infoTwo in info.infos"  class="col-lg-6 col-sm-6  wow">
                                 <div class="about-image">
                                     <a href="javascript:void (0)">
 
@@ -139,27 +139,13 @@
                                     </a>
                                 </div>
                                 <a href="javascript:void (0)">
-                                    <h3 class="itemAlign">关于中科联云</h3>
+                                    <h3 class="itemAlign">{{infoTwo.title}}</h3>
                                 </a>
                                 <p></p>
 
                             </div>
-
-                            <div class="col-lg-6 col-sm-6  wow">
-                                <div class="about-image">
-                                    <a href="javascript:void (0)">
-
-                                        <img style="width:640px;height:auto;" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
-                                    </a>
-                                </div>
-                                <a href="javascript:void (0)">
-                                    <h3 class="member-name itemAlign">核心价值观</h3>
-                                </a>
-                                <p></p>
-
                             </div>
                         </div>
-                    </div>
                 </section>
                 <!--end 公司介绍-->
                 <!--合作伙伴-->
@@ -728,7 +714,8 @@
         el:"#page",
         data:{
             listTop:[],
-            listBottom:[]
+            listBottom:[],
+            listInfo:[]
         },
         created:function () {
             this.dataTableList();
@@ -743,9 +730,9 @@
                 let dataStr = {
                     id:id
                 };
-                url="/web/info";
+                url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-
+                    vm.listInfo=data.data.infos[0].infos
                 })
             },
         }

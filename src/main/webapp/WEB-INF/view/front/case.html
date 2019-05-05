@@ -114,7 +114,7 @@
                         </div>
                         <div class="row">
                             <!--案例-->
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
+                            <div v-for="info in listInfo" class="col-sm-6 col-lg-6 wow slideInUp">
                                 <div class="service-item ">
                                     <div class="service-image">
                                         <a href="javascript:void (0)">
@@ -123,114 +123,9 @@
                                     </div>
                                     <div class="service-content">
                                         <a href="javascript:void (0)">
-                                            <h4 class="service-title">中车戚墅堰</h4>
+                                            <h4 class="service-title">{{info.title}}</h4>
                                         </a>
-                                        <p>过程可追溯，提高生产效率、降低制造成本、提升生产管控水平</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">中车浦镇</h4>
-                                        </a>
-                                        <p>建立了工位制为核心的企业级信息化管理平台</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">西电操动机构</h4>
-                                        </a>
-                                        <p>提高产品的完工准时化率10～20%，改善产品质量20%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">烽火通信</h4>
-                                        </a>
-                                        <p>实现MES与ERP、PLM、B2B、SRM等系统进行集成</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">中航工业</h4>
-                                        </a>
-                                        <p>实现产品加工全过程质量跟踪与控制</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">东方电机</h4>
-                                        </a>
-                                        <p>打通企业生产计划与制造执行间的业务环节</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">南瑞集团</h4>
-                                        </a>
-                                        <p>通过系统集成实现统一平台，将业务流程形成一个闭环</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-6 wow slideInUp">
-                                <div class="service-item ">
-                                    <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <a href="javascript:void (0)">
-                                            <h4 class="service-title">CETC某所</h4>
-                                        </a>
-                                        <p>实现对航天产品生产过程数据包的采集</p>
+                                        <p>{{info.desc}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -414,7 +309,8 @@
         el:"#page",
         data:{
             listTop:[],
-            listBottom:[]
+            listBottom:[],
+            listInfo:[]
         },
         created:function () {
             this.dataTableList();
@@ -429,9 +325,9 @@
                 let dataStr = {
                     id:id
                 };
-                url="/web/info";
+                url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-
+                    vm.listInfo=data.data.infos[0].infos
                 })
             },
         }

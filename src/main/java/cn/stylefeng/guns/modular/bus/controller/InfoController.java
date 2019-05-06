@@ -4,6 +4,7 @@ import cn.stylefeng.guns.config.properties.GunsProperties;
 import cn.stylefeng.guns.core.shiro.ShiroKit;
 import cn.stylefeng.guns.core.util.DateUtils;
 import cn.stylefeng.guns.core.util.FileUtils;
+import cn.stylefeng.guns.core.util.HtmlCompressor;
 import cn.stylefeng.guns.core.util.StringUtil2;
 import cn.stylefeng.guns.modular.bus.model.Title;
 import cn.stylefeng.guns.modular.bus.service.ITitleService;
@@ -115,6 +116,9 @@ public class InfoController extends BaseController {
     public Object add(Info info) {
         info.setCreateTime(DateUtils.getTodayString());
         info.setCreateUser(ShiroKit.getUser().getId()+"");
+        if (StringUtil2.isNotEmpty(info.getContent())){
+            info.setContent(info.getContent().replaceAll("\\s*", ""));
+        }
         infoService.insert(info);
         return SUCCESS_TIP;
     }
@@ -137,6 +141,9 @@ public class InfoController extends BaseController {
     public Object update(Info info) throws Exception {
         info.setModifyTime(DateUtils.getTodayString());
         info.setModifyUser(ShiroKit.getUser().getId()+"");
+        if (StringUtil2.isNotEmpty(info.getContent())){
+            info.setContent(HtmlCompressor.compress(info.getContent()));
+        }
         infoService.updateById(info);
         return SUCCESS_TIP;
     }
@@ -149,4 +156,5 @@ public class InfoController extends BaseController {
     public Object detail(@PathVariable("infoId") Integer infoId) {
         return infoService.selectById(infoId);
     }
+
 }

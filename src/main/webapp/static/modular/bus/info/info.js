@@ -18,7 +18,6 @@ Info.initColumn = function () {
             {title: '所属类型', field: 'typeName', visible: true, align: 'center', valign: 'middle'},
             {title: '内容名字', field: 'title', visible: true, align: 'center', valign: 'middle'},
             {title: '图片', field: 'iconPath', visible: true, align: 'center', valign: 'middle'},
-            {title: '文本', field: 'content', visible: true, align: 'center', valign: 'middle'},
             {title: '简介', field: 'desc', visible: true, align: 'center', valign: 'middle'},
             {title: '浏览量', field: 'hot', visible: true, align: 'center', valign: 'middle'},
 /*            {title: '创建人', field: 'createUser', visible: true, align: 'center', valign: 'middle'},

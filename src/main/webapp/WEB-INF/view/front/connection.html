@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--关于我们-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -122,10 +123,15 @@
                 <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
                 </div>
             </section>
-
-            <div class="content">
+            <div id="info" style="display: none"  class="section-title-area">
+                <div >
+                    <h2 class="section-title">{{htmlTitle}}</h2>
+                    <div style="text-align:left" class="service-content" v-html="htmlInfo"></div>
+                </div>
+            </div>
+            <div id="zhuti" class="content">
                 <!--公司介绍-->
-                <section v-for="(info,index) in listInfo" v-if="index=='0'" id="About" class="section-about section-padding onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index==0"  id="About" class="section-about section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.name}}</h2>
@@ -133,12 +139,12 @@
                         <div class="row">
                             <div v-for="infoTwo in info.infos"  class="col-lg-6 col-sm-6  wow">
                                 <div class="about-image">
-                                    <a href="javascript:void (0)">
+                                    <a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">
 
-                                        <img style="width:640px;height:auto;" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
+                                        <img style="width:640px;height:auto;" :src="'/kaptcha/'+infoTwo.iconPath" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
                                     </a>
                                 </div>
-                                <a href="javascript:void (0)">
+                                <a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">
                                     <h3 class="itemAlign">{{infoTwo.title}}</h3>
                                 </a>
                                 <p></p>
@@ -149,148 +155,20 @@
                 </section>
                 <!--end 公司介绍-->
                 <!--合作伙伴-->
-                <section id="Partners" class="section-team section-padding section-meta onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index==1"  id="Partners" class="section-team section-padding section-meta onepage-section">
                     <div class="container">
                         <div class="section-title-area">
-                            <h2 class="section-title">我们的客户</h2>
+                            <h2 class="section-title">{{info.name}}</h2>
                         </div>
                         <div class="caseWrap" id="cases">
                             <div class="team-members row team-layout-4">
-                                <div class="team-member wow ">
+                                <div v-for="infoTwo in info.infos" class="team-member wow ">
                                     <div class="member-thumb">
                                         <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                            <img :src="'/kaptcha/'+infoTwo.iconPath" alt="">
                                         </a>
                                     </div>
-                                    <a><h5>西电集团</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>东方电气</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>南瑞集团</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中国中车</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中航工业</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中国铁建</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中国电科</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中国电建</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中国兵器工业</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>烽火通信</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>正泰集团</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>华工科技</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中信重工</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>中储粮总公司</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>东安动力</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>柳工集团</h5></a>
-                                </div>
-                                <div class="team-member wow ">
-                                    <div class="member-thumb">
-                                        <a>
-                                            <img src="/newStatic/picture/iconresourcehandler.ashx" alt="">
-                                        </a>
-                                    </div>
-                                    <a><h5>北汽集团</h5></a>
+                                    <a><h5>{{infoTwo.title}}</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -298,65 +176,36 @@
                 </section>
                 <!--end 合作伙伴-->
                 <!--公司新闻-->
-                <section id="News" class="section-news section-padding onepage-section">
+                <section  v-for="(info,index) in listInfo" v-if="index==2" id="News" class="section-news section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
-                            <h2 class="section-title">公司新闻</h2>
+                            <h2 class="section-title">{{info.name}}</h2>
                         </div>
                         <div class="section-content">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="blog-entry wow slideInUp">
                                         <!--新闻列表-->
-                                        <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                        <article v-for="(infoTwo,index) in info.infos" v-if="index>=(pageSize-1)*currentPage&&index<=pageSize*currentPage" id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
                                             <div class="list-article-thumb">
                                                 <a href="javascript:void (0)">
-                                                    <img width="130" height="75" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" style="max-height:75px" />
+                                                    <img width="130" height="75" :src="'/kaptcha/'+infoTwo.iconPath" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" style="max-height:75px" />
 
                                                 </a>
                                             </div>
                                             <div class="list-article-content">
                                                 <header class="entry-header">
-                                                    <h2 class="entry-title"><a href="javascript:void (0)">项目资讯丨陕鼓合同履约信息透明化系统项目顺利验收</a></h2>
+                                                    <h2 class="entry-title"><a href="javascript:void (0)">{{infoTwo.title}}</a></h2>
                                                 </header>
                                                 <div class="entry-excerpt">
-                                                    <p class="cont">由佰思杰承接的陕鼓合同履约信息透明化系统项目验收大会在陕鼓集团临潼生产基地顺利召开，项目实现预期目标，通过验收！</p>
+                                                    <p class="cont">{{infoTwo.desc}}</p>
                                                 </div>
                                             </div>
-                                        </article>                                                                    <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
-                                        <div class="list-article-thumb">
-                                            <a href="javascript:void (0)">
-                                                <img width="130" height="75" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" style="max-height:75px" />
-
-                                            </a>
-                                        </div>
-                                        <div class="list-article-content">
-                                            <header class="entry-header">
-                                                <h2 class="entry-title"><a href="javascript:void (0)">陈安丽副省长调研佰思杰承建的武汉工程大学智能制造工程中心</a></h2>
-                                            </header>
-                                            <div class="entry-excerpt">
-                                                <p class="cont">湖北省副省长陈安丽一行来到武汉工程大学进行工作调研，并实地考察了佰思杰承建的武汉工程大学智能制造工程中心。</p>
-                                            </div>
-                                        </div>
-                                    </article>                                                                    <article id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
-                                        <div class="list-article-thumb">
-                                            <a href="javascript:void (0)">
-                                                <img width="130" height="75" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" style="max-height:75px" />
-
-                                            </a>
-                                        </div>
-                                        <div class="list-article-content">
-                                            <header class="entry-header">
-                                                <h2 class="entry-title"><a href="javascript:void (0)">星聚壹玖 傲寒迎春 武汉企业家携手开启新一年</a></h2>
-                                            </header>
-                                            <div class="entry-excerpt">
-                                                <p class="cont">2019武汉科创企业家峰会暨致远创盟新春联谊会在荷田大酒店隆重举行，来自智能制造、移动互联网、人工智能、新材料、光通信等领域的150余位企业家齐聚一堂。</p>
-                                            </div>
-                                        </div>
-                                    </article>                                                            <!--page ==S -->
+                                        </article>
+                                        <!--page ==S -->
                                         <div style="text-align:center;" class="PageBtn">
 
-                                            <a class="btn btn-theme-primary-outline" href="/AboutUs/Index/2#News">下一页</a>
+                                            <a class="btn btn-theme-primary-outline" href="" v-on:click="toPage()">下一页</a>
                                         </div>
                                         <!--page ==E -->
                                     </div>
@@ -367,172 +216,25 @@
                 </section>
                 <!--end 公司新闻-->
                 <!-- 加入我们-->
-                <section id="JoinUs" class="section-contact section-padding  section-meta onepage-section">
+                <section  v-for="(info,index) in listInfo" v-if="index==3"  id="JoinUs" class="section-contact section-padding  section-meta onepage-section">
                     <div class="container">
                         <div class="section-title-area">
-                            <h2 class="section-title">加入我们</h2>
-                        </div>
-                        <div class="service-content">
-                            <p>
-                                <span style="font-size: 18px;">
-                                    <strong>
-                                        <img src="/newStatic/picture/filehandler.ashx" title="timg_编辑.jpg" alt="timg_编辑.jpg"/>
-                                    </strong>
-                                </span>
-                            </p>
-                            <p><br/></p>
-                            <p>
-                                <span style="font-size: 18px;">
-                                    <strong>
-                                        <span style="font-family: 仿宋_GB2312;">岗位：售前咨询顾问</span>
-                                    </strong>
-                                </span>
-                            </p>
-                            <p>
-                                <span style="font-family:仿宋_GB2312">主要职责：负责公司项目售前解决方案制定及与客户沟通。</span>
-                            </p>
-                            <p>
-                                <span style="font-family: 仿宋_GB2312;">岗位要求：</span>
-                            </p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li>
-                                    <p>
-                                        <span style="font-family:仿宋_GB2312">具有很强的学习能力，对企业管理、企业信息化建设、智能制造、计算机管理系统等具有浓厚兴趣；</span>
-                                    </p>
-                                </li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">本科及以上学历，机械、计算机、</span>MBA<span style="font-family: 仿宋_GB2312;">、自动化相关专业毕业；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">文笔好，熟练使用</span>office<span style="font-family: 仿宋_GB2312;">系列软件；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">学习能力强，逻辑性强，口头表达能力突出。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-family: 仿宋_GB2312; font-size: 18px;">岗位：实施项目经理</span></strong></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">负责公司</span>MES<span style="font-family:仿宋_GB2312">和相关智能制造软件平台的项目实施及交付；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责对项目实施的全过程进行管理和控制，负责项目实施成本的控制；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责制定实施计划，并监督计划的执行情况，确保计划被准确执行，完成实施工作；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责项目实施的业务调研和解决方案制定，发掘出软件系统能为用户提供的价值，有效控制项目边界；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">参与项目售前工作，完成项目售前、售后的成本估算。</span></p></li>
-                            </ol>
-                            <p><span style="font-family:仿宋_GB2312"><br/></span></p>
-                            <p><span style="font-size: 18px;"><strong><span style="font-family: 仿宋_GB2312;">岗位：</span>MES<span style="font-family: 仿宋_GB2312;">系统需求分析师</span></strong></span></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责制造业制造执行系统</span>(MES)<span style="font-family: 仿宋_GB2312;">业务支撑产品的规划与设计，参与用户需求调研、讨论、分析；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">调研了解客户的业务需求，撰写产品需求说明书，产品设计文档和原型设计文档；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">与研发、咨询、实施等部门有效沟通，确保其对产品充分理解；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">从理解分析客户</span>/<span style="font-family: 仿宋_GB2312;">用户业务需求、业务痛点开始，借鉴业界实践，设计业务方案，并在业务方案和业务需求基础上，完成解决方案规划、设计。</span></p></li>
-                            </ol>
-                            <p><br/></p>
-                            <p><span style="font-size: 18px;"><strong><span style="font-family: 仿宋_GB2312;">岗位：</span>WMS<span style="font-family: 仿宋_GB2312;">系统需求分析师</span></strong></span></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <p>1. <span style="font-family:仿宋_GB2312">负责制造业企业库存管理与物流配送业务支撑产品的规划与设计，参与用户需求调研、讨论、分析；</span>&nbsp;</p>
-                            <p>2. <span style="font-family:仿宋_GB2312">调研了解客户的业务需求，撰写产品需求说明书，产品设计文档和原型设计文档；</span>&nbsp;</p>
-                            <p>3. <span style="font-family:仿宋_GB2312">与研发、咨询、实施等部门有效沟通，确保其对产品充分理解；</span>&nbsp;</p>
-                            <p>4. <span style="font-family:仿宋_GB2312">从理解分析客户</span>/<span style="font-family:仿宋_GB2312">用户业务需求、业务痛点开始，借鉴业界实践，设计业务方案，并在业务方案和业务需求基础上，完成解决方案规划、设计。</span></p>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-family: 仿宋_GB2312; font-size: 18px;">岗位：智能产线项目经理</span></strong></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">负责组建并带领技术团队，完成公司承接智能产线项目功能整体架构、设计、实现；</span></p></li>
-                                <li><p><span style="font-family:仿宋_GB2312">负责管理项目进度，按照开发计划，分配开发任务、协调开发人员，并及时发现和解决技术问题；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责项目需求分析与设计，制定各种技术标准、技术规范；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责技术团队建设，指导、培训、监督、考核技术队伍，提高技术整体技术水平；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">了解相关行业产品和技术趋势，参与公司技术战略制定、实施。</span></p></li>
-                            </ol>
-                            <p>&nbsp;&nbsp;</p>
-                            <p><span style="font-size: 18px;"><strong><span style="font-family: 仿宋_GB2312;">岗位：高级机械工程师</span></strong></span></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">负责公司智能产线解决方案的机械部分的设计、改造、制作、安装和调试。</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">承担专业技术、产品技术调研与分析，开展对外技术交流，满足中长期技术发展规划的需要；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">完成新设想的产品或部件的结构设计及样件的试制；对原有的产品或部件结构设计进行改进和完善；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">跟踪并获取最新设计理念，方法并加以运用到产品设计中；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">参与和</span>/<span style="font-family: 仿宋_GB2312;">或负责获取，评估和保管设计图纸等相关资料；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">参与和</span>/<span style="font-family: 仿宋_GB2312;">或负责新技术</span>/<span style="font-family: 仿宋_GB2312;">新项目的自主开发并加以应用参与产品开发过程中技术问题的讨论，实施新产品的导入。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p><span style="font-size: 18px;"><strong><span style="font-family: 仿宋_GB2312;">岗位：电气设计工程师</span></strong></span></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <p><span style="font-family:仿宋_GB2312">负责公司智能产线解决方案的电气部分的设计、改造、制作、安装和调试。</span></p>
-                            <p><span style="font-family:仿宋_GB2312">主要包括：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">负责系统电气控制和功能实现，含电气图纸设计、配盘、施工、调试；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">包括电气元件的选型、</span>BOM<span style="font-family: 仿宋_GB2312;">编制、申请和备品备件的集中调配和资源管理；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">技术支持公司的调试团队，对重点的技术难题给予指导性解决方案，并负责组织实施；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责对所开发设备电气部分资料档案进行管理和统计；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责或参与机器人技术及功能实现；参与或主导机器人项目先期方案设计；机器人选型、模拟、编程、调试；对承包商提供的机器人解决方案进行审核；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责电气工程中的隐蔽项目的检查、记录、验收及功能检测；解决客户技术问题和协助销售部门做好客户服务；与机械工程师配合完成产品设计，并准备生产文件、使用手册等相关文件资料；配合解决自动化生产、调试过程中出现的机械技术问题。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-family: 仿宋_GB2312; font-size: 18px;">岗位：配置管理工程师</span></strong></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family: 仿宋_GB2312;">维护公司级配置库；</span></p></li><li><p><span style="font-family: 仿宋_GB2312;">进行配置库权限设置和管理；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">跟踪公司级项目和任务的督办及进度跟踪；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">制定、优化及推广软件配置管理流程、版本发布流程及各类规范及制度；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">制订和维护配置管理计划，使用配置管理工具进行项目配置管理，配置库维护；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">负责配置管理服务器、配置管理系统的部署和日常维护，负责相关网络环境维护、数据备份；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">执行配置审核，保证配置管理库的可用性和完整性；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">为项目组及其他配置管理相关人员提供配置管理基本知识和相关工具的培训；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">维护项目环境及项目状态信息，定期输出配置管理相关数据、状态、报告；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">其他领导交办的任务。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-size: 18px;"><span style="font-family: 仿宋_GB2312;">岗位：</span>MES<span style="font-family: 仿宋_GB2312;">软件实施顾问</span></span></strong></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <p><span style="font-family:仿宋_GB2312">协助项目经理进行用户现场需求调研、软件产品的现场安装、调试和应用培训、软件产品的客户化配置和定制开发、项目实施过程中的技术服务工作。</span></p>
-                            <p><span style="font-family: 仿宋_GB2312;">关键要求：</span><br/></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">对技术和软件产品有钻研热情；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">在完成技术工作的同时能有效与用户进行沟通；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">大学专科以上学历；机械、电子、计算机相关专业毕业；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">熟练掌握计算机知识，熟悉</span>SQLSERVER<span style="font-family: 仿宋_GB2312;">或</span>ORACLE<span style="font-family: 仿宋_GB2312;">数据库；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">有制造业企业工作经验、或</span>CAD/CAPP/PDM/MES/ERP<span style="font-family: 仿宋_GB2312;">等软件产品项目实施经验者优先；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">能适应长期出差。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-family: 仿宋_GB2312; font-size: 18px;">岗位：二次开发工程师</span></strong> </p>
-                            <p><span style="font-family:仿宋_GB2312">职位描述：</span></p>
-                            <p><span style="font-family:仿宋_GB2312">从事公司自主知识产权软件产品</span>MES<span style="font-family: 仿宋_GB2312">（制造执行系统）的二次开发工作。</span></p>
-                            <p>&nbsp;<span style="font-family: 仿宋_GB2312;">职位要求：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">统招专科及以上，计算机及其相关专业。</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">精通面向对象、关系数据库（</span>Oracle<span style="font-family: 仿宋_GB2312;">或</span>MS Sql Server<span style="font-family: 仿宋_GB2312;">）。</span></p></li>
-                                <li><p><span style="font-family:仿宋_GB2312">熟悉</span>.NET<span style="font-family:仿宋_GB2312">（</span>C#<span style="font-family:仿宋_GB2312">、</span>ASP.NET WebForm)<span style="font-family:仿宋_GB2312">开发。</span></p></li>
-                                <li><p><span style="font-family:仿宋_GB2312">了解</span>HTML<span style="font-family:仿宋_GB2312">、</span>CSS<span style="font-family:仿宋_GB2312">、</span>JavaScript<span style="font-family:仿宋_GB2312">。</span></p></li>
-                                <li><p><span style="font-family:仿宋_GB2312">具有良好的沟通能力及文档编写能力。</span></p></li><li><p><span style="font-family:仿宋_GB2312">能适应中、短期出差。</span></p></li><li><p><span style="font-family:仿宋_GB2312">优秀者学历和工作经验可适当放宽要求。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p><strong><span style="font-family: 仿宋_GB2312; font-size: 18px;">岗位：公共关系专员</span></strong></p>
-                            <p><span style="font-family:仿宋_GB2312">主要职责：</span></p>
-                            <ol class=" list-paddingleft-2" style="list-style-type: decimal;">
-                                <li><p><span style="font-family:仿宋_GB2312">负责与各级政府主管部门的日常沟通与联系，做好政府公共关系维护；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">维护并拓展政府及行业协会关系资源，搭建沟通渠道；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">协助公司高层领导进行部分对外政府和客户的商务接待活动；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;">收集、研究与公司相关的各类优惠政策及项目申报信息，进行研究筛选，制订项目申报计划；</span></p></li>
-                                <li><p><span style="font-family: 仿宋_GB2312;"></span><span style="font-family: 仿宋_GB2312;">负责协调公司资源进行项目申报立项、材料编写、申报提交、申报结果跟踪、组织项目验收等流程。</span></p></li>
-                            </ol>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p><span style="font-size: 18px;"><strong>联系方式：</strong></span></p>
-                            <p><span style="font-size: 18px;"><strong>综合管理部 &nbsp;董小姐 电话:027-87774268 &nbsp;邮箱：&nbsp;dzjbill-sj.com&nbsp;</strong></span></p>
-                            <p><br/></p>
-                            <p style="line-height: 1.5em;"><span style="font-family: 微软雅黑;"></span><br/></p>
-                            <p><span style="font-size: 13px;"></span></p>
+                            <h2 class="section-title">{{info.name}}</h2>
+                            <p></p>
+                            <p>s</p>
+                            <div v-for="infoTwo in info.infos" v-if="index==3" class="service-content" v-html="infoTwo.content" style="text-align:left">
+                            </div>
                         </div>
                     </div>
                 </section>
                 <!--end 加入我们-->
                 <!--联系我们-->
-                <section id="Contact" class="section-contact section-padding onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index==4" id="Contact" class="section-contact section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
-                            <h2 class="section-title">联系我们</h2>
+                            <h2 class="section-title">{{info.name}}</h2>
                         </div>
-                        <div class="service-content">
-                            <p style="line-height: 1.75em;"><span style="font-size: 18px;">武汉佰思杰科技有限公司</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">总部地址：武汉市东湖新技术开发区光谷软件园F1-16楼</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">服务热线：400-6340-623</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">服务邮箱：bsgbestmes.cn</span></p><p><br/></p><p></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">成都办事处</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">电话：182 8041 8920</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">地址：成都市锦江区一环路东五段108号东恒国际1单元1214</span></p><p><br/><br/></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">招聘热线：027-87774268</span></p><p style="line-height: 1.75em;"><span style="font-size: 18px;">招聘邮箱：dzjbill-sj.com</span></p><p style="line-height: 1.75em;"><br/></p>
+                        <div class="service-content" v-for="infoTwo in info.infos" v-if="index==4"  v-html="infoTwo.content">
                         </div>
                     </div>
                 </section>
@@ -715,7 +417,12 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            htmlTitle:"",
+            htmlInfo:"",
+            pageCount:0,
+            pageSize:1,
+            currentPage:1
         },
         created:function () {
             this.dataTableList();
@@ -732,9 +439,39 @@
                 };
                 url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-                    vm.listInfo=data.data.infos[0].infos
+                    vm.listInfo=data.data.infos
+                    for(var j=0;j<data.data.infos.length;j++){
+                        debugger
+                        if (data.data.infos[j].name='公司新闻'){
+                            vm.pageCount=data.data.infos[j].infos.length;
+                        }
+                    }
                 })
             },
         }
     })
+    toInfoPage = function (id) {
+
+        let dataStr = {
+            id:id
+        };
+        var info= document.getElementById('info');
+        info.style.display="block";
+        document.getElementById('zhuti').style.display="none"
+        url="/web/info";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            var i=data.data.info;
+            vm.htmlTitle=i.title;
+            vm.htmlInfo=i.content;
+        })
+    }
+    toPage = function () {
+        debugger;
+       var page= vm.pageCount/vm.pageSize;
+        if (page>vm.currentPage){
+            vm.currentPage=vm.currentPage+1;
+        }else {
+            return false;
+        }
+    }
 </script>

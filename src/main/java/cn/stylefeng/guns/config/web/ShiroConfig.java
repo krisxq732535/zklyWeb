@@ -176,6 +176,7 @@ public class ShiroConfig {
          */
         Map<String, String> hashMap = new LinkedHashMap<>();
         hashMap.put("/newStatic/**", "anon");
+        hashMap.put("/kaptcha/**", "anon");//网站图片无需登录
         hashMap.put("/web/**", "anon");
         hashMap.put("/static/**", "anon");
         hashMap.put("/newStatic/**", "anon");

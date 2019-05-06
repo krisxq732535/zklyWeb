@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--解决方案-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -107,9 +108,6 @@
     <!--end 头部-->
     <!--中间内容-->
     <div id="content" class="site-content">
-
-
-
         <main id="main" class="site-main" role="main">
             <!--banner图-->
             <section id="hero" data-images="[&quot;/Content/banner/观点.jpg&quot;]" class="hero-slideshow-wrapper hero-slideshow-normal">
@@ -123,7 +121,13 @@
                 <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
                 </div>
             </section>
-
+            <div id="info" style="display: none"  class="section-title-area">
+                <div >
+                    <h2 class="section-title">{{htmlTitle}}</h2>
+                    <div style="text-align:center" class="service-content" v-html="htmlInfo"></div>
+                </div>
+            </div>
+            <div id="zhuti">
             <section class="section-services section-padding onepage-section">
                 <div class="container">
                     <ul class="nav nav-tabs">
@@ -145,12 +149,12 @@
                             <div v-for="infoTwo in info.infos"  class="col-sm-6 col-lg-6 wow slideInUp">
                                 <div class="service-item" style="background-color:#F1F1F1">
                                     <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="">
+                                        <a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">
+                                            <img class="case-Img" :src="'/kaptcha/'+infoTwo.iconPath" alt="">
                                         </a>
                                     </div>
                                     <div class="service-content">
-                                        <a href="javascript:void (0)">
+                                        <a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">
                                             <h4 class="service-title">{{infoTwo.title}}</h4>
                                         </a>
                                         <p>{{infoTwo.desc}}</p>
@@ -161,10 +165,12 @@
                     </div>
                 </section>
             </div>
+            </div>
         </main>
 
         <script type="text/javascript">
-         var    onTabClick = function (info,infos) {
+             onTabClick = function (info,infos) {
+                 debugger
                 window.event ? window.event.cancelBubble = true : e.stopPropagation();  //阻止事件冒泡和默认事件
 
                  var field = document.getElementById(info.id);
@@ -181,7 +187,6 @@
              fieldinfo.setAttribute("class", "active");
             }
         </script>
-
     </div>
     <!-- end 中间内容 -->
     <!--底部-->
@@ -356,7 +361,9 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            htmlTitle:"",
+            htmlInfo:""
         },
         created:function () {
             this.dataTableList();
@@ -381,5 +388,20 @@
                 })
             },
         }
-    })
+    });
+    toInfoPage = function (id) {
+
+        let dataStr = {
+            id:id
+        };
+        var info= document.getElementById('info');
+        info.style.display="block";
+        document.getElementById('zhuti').style.display="none"
+        url="/web/info";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            var i=data.data.info;
+            vm.htmlTitle=i.title;
+            vm.htmlInfo=i.content;
+        })
+    }
 </script>

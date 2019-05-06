@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--产品-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -90,8 +91,6 @@
     <!--end 头部-->
     <!--中间内容-->
     <div id="content" class="site-content">
-
-
         <main id="main" class="site-main" role="main">
             <!--banner图-->
             <section id="hero" data-images="[&quot;/Content/banner/观点.jpg&quot;]" class="hero-slideshow-wrapper hero-slideshow-normal">
@@ -105,8 +104,14 @@
                 <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
                 </div>
             </section>
+            <div id="info" style="display: none"  class="section-title-area">
+                <div >
+                    <h2 class="section-title">{{htmlTitle}}</h2>
+                    <div style="text-align:center" class="service-content" v-html="htmlInfo"></div>
+                </div>
 
-            <div class="content">
+            </div>
+            <div id="zhuti" class="content">
                 <!--我们的产品-->
                 <section id="features" class="section-features section-padding  onepage-section">
                     <div class="container">
@@ -121,12 +126,12 @@
                                 <!--产品列表-->
                                 <div class="feature-item col-lg-4 col-sm-6 wow slideInUp" v-for="info in listInfo">
                                     <div class="feature-media">
-                                        <a class="fa-stack fa-5x" href="javascript:void (0)">
+                                        <a class="fa-stack fa-5x" href="javascript:void (0)" v-on:click="toInfoPage(info.id)">
                                             <i class="fa fa-stack-2x icon-background-default"></i>
-                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" src="/newStatic/picture/iconresourcehandler.ashx" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
+                                            <span class="feature-icon fa fa-stack-1x"><img width="66" height="66" class="case-Img" :src="'/kaptcha/'+info.iconPath" alt="" sizes="(max-width: 66px) 100vw, 66px"></span>
                                         </a>
                                     </div>
-                                    <a href="javascript:void (0)">
+                                    <a href="javascript:void (0)" v-on:click="toInfoPage(info.id)">
                                         <h3 class="section_service_2_title_0">{{info.title}}</h3>
                                     </a>
                                     <div class="feature-content">
@@ -316,7 +321,9 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            htmlTitle:"",
+            htmlInfo:""
         },
         created:function () {
             this.dataTableList();
@@ -338,4 +345,19 @@
             },
         }
     })
+    toInfoPage = function (id) {
+
+        let dataStr = {
+            id:id
+        };
+       var info= document.getElementById('info');
+       info.style.display="block";
+        document.getElementById('zhuti').style.display="none"
+        url="/web/info";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            var i=data.data.info;
+            vm.htmlTitle=i.title;
+            vm.htmlInfo=i.content;
+        })
+    }
 </script>

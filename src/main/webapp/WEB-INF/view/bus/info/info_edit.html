@@ -61,6 +61,8 @@
 <script src="${ctxPath}/static/modular/bus/info/info_info.js"></script>
 <script type="text/javascript">
     $('#summernote').summernote( { lang:'zh-CN', placeholder: '请输入内容', height: 300 });
+    var desc='${item.content}';
+    console.log(desc)
     $('#summernote').summernote('code','${item.content}');
 </script>
 @}

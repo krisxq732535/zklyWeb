@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--案例-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -104,8 +105,13 @@
                 <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
                 </div>
             </section>
-
-            <div class="content">
+            <div id="info" style="display: none"  class="section-title-area">
+                <div >
+                    <h2 class="section-title">{{htmlTitle}}</h2>
+                    <div style="text-align:left" class="service-content" v-html="htmlInfo"></div>
+                </div>
+            </div>
+            <div id="zhuti" class="content">
                 <!--案例-->
                 <section id="services" class="section-services section-padding  section-meta  onepage-section">
                     <div class="container">
@@ -117,12 +123,12 @@
                             <div v-for="info in listInfo" class="col-sm-6 col-lg-6 wow slideInUp">
                                 <div class="service-item ">
                                     <div class="service-image">
-                                        <a href="javascript:void (0)">
-                                            <img style="max-width:240px;height:150px" src="/newStatic/picture/iconresourcehandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
+                                        <a href="javascript:void (0)" v-on:click="toInfoPage(info.id)">
+                                            <img style="max-width:240px;height:150px" :src="'/kaptcha/'+info.iconPath" class="attachment-onepress-medium size-onepress-medium wp-post-image" />
                                         </a>
                                     </div>
                                     <div class="service-content">
-                                        <a href="javascript:void (0)">
+                                        <a href="javascript:void (0)" v-on:click="toInfoPage(info.id)">
                                             <h4 class="service-title">{{info.title}}</h4>
                                         </a>
                                         <p>{{info.desc}}</p>
@@ -310,7 +316,9 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            htmlTitle:"",
+            htmlInfo:""
         },
         created:function () {
             this.dataTableList();
@@ -331,5 +339,20 @@
                 })
             },
         }
-    })
+    });
+    toInfoPage = function (id) {
+
+        let dataStr = {
+            id:id
+        };
+        var info= document.getElementById('info');
+        info.style.display="block";
+        document.getElementById('zhuti').style.display="none"
+        url="/web/info";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            var i=data.data.info;
+            vm.htmlTitle=i.title;
+            vm.htmlInfo=i.content;
+        })
+    }
 </script>

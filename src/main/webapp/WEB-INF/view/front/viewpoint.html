@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--观点-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
@@ -107,8 +108,13 @@
 
                 </div>
             </section>
-
-            <div class="content">
+            <div id="info" style="display: none"  class="section-title-area">
+                <div >
+                    <h2 class="section-title">{{htmlTitle}}</h2>
+                    <div style="text-align:center" class="service-content" v-html="htmlInfo"></div>
+                </div>
+            </div>
+            <div id="zhuti" class="content">
                 <!--我们的观点-->
                 <section class="section-viewPoint section-padding section-meta onepage-section">
                     <div class="container">
@@ -118,8 +124,9 @@
                         <div class="section-content">
                             <div class="row">
                                 <div v-for="info in listInfo" class="col-lg-6 col-sm-6  wow slideInUp">
-                                    <div class="about-image itemAlign"><a href="javascript:void (0)"><img width="640" height="350" src="/newStatic/picture/thumbnailhandler.ashx" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
-                                    <a href="javascript:void (0)">
+                                    <div class="about-image itemAlign">
+                                    <a href="javascript:void (0)" v-on:click="toInfoPage(info.id)"><img width="640" height="350"  :src="'/kaptcha/'+info.iconPath" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" /></a></div>
+                                    <a href="javascript:void (0)" v-on:click="toInfoPage(info.id)">
                                         <h4 class="itemAlign">{{info.title}}</h4>
                                     </a>
                                     <div class="feature-item-content"><p style="height:90px;overflow:hidden">{{info.desc}}</p></div>
@@ -305,7 +312,9 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            htmlTitle:"",
+            htmlInfo:""
         },
         created:function () {
             this.dataTableList();
@@ -326,5 +335,20 @@
                 })
             },
         }
-    })
+    });
+    toInfoPage = function (id) {
+
+        let dataStr = {
+            id:id
+        };
+        var info= document.getElementById('info');
+        info.style.display="block";
+        document.getElementById('zhuti').style.display="none"
+        url="/web/info";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            var i=data.data.info;
+            vm.htmlTitle=i.title;
+            vm.htmlInfo=i.content;
+        })
+    }
 </script>

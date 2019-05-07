@@ -37,6 +37,7 @@
         #notsupport{
             display:block !important;
         }
+
     </style>
     <![endif]-->
     <!--[if IE 6]>
@@ -186,16 +187,16 @@
                                 <div class="col-sm-12">
                                     <div class="blog-entry wow slideInUp">
                                         <!--新闻列表-->
-                                        <article v-for="(infoTwo,index) in info.infos" v-if="index>=(pageSize-1)*currentPage&&index<=pageSize*currentPage" id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                        <article v-for="(infoTwo,index1) in info.infos" v-if="index1 >= (currentPage-1)*pageSize && index1<=currentPage*pageSize-1" id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
                                             <div class="list-article-thumb">
-                                                <a href="javascript:void (0)">
+                                                <a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">
                                                     <img width="130" height="75" :src="'/kaptcha/'+infoTwo.iconPath" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" style="max-height:75px" />
 
                                                 </a>
                                             </div>
                                             <div class="list-article-content">
                                                 <header class="entry-header">
-                                                    <h2 class="entry-title"><a href="javascript:void (0)">{{infoTwo.title}}</a></h2>
+                                                    <h2 class="entry-title"><a href="javascript:void (0)" v-on:click="toInfoPage(infoTwo.id)">{{infoTwo.title}}</a></h2>
                                                 </header>
                                                 <div class="entry-excerpt">
                                                     <p class="cont">{{infoTwo.desc}}</p>
@@ -204,8 +205,9 @@
                                         </article>
                                         <!--page ==S -->
                                         <div style="text-align:center;" class="PageBtn">
+                                            <a id="shang" class="btn btn-theme-primary-outline" style="display: none" href="javascript:void (0)" v-on:click="toPage(2)">上一页</a>
+                                            <a id="xia" class="btn btn-theme-primary-outline" href="javascript:void (0)" v-on:click="toPage(1)">下一页</a>
 
-                                            <a class="btn btn-theme-primary-outline" href="" v-on:click="toPage()">下一页</a>
                                         </div>
                                         <!--page ==E -->
                                     </div>
@@ -421,7 +423,7 @@
             htmlTitle:"",
             htmlInfo:"",
             pageCount:0,
-            pageSize:1,
+            pageSize:2,
             currentPage:1
         },
         created:function () {
@@ -441,8 +443,7 @@
                 ajax.data("post",true,url,"json",dataStr,function (data) {
                     vm.listInfo=data.data.infos
                     for(var j=0;j<data.data.infos.length;j++){
-                        debugger
-                        if (data.data.infos[j].name='公司新闻'){
+                        if (data.data.infos[j].name=='公司新闻'){
                             vm.pageCount=data.data.infos[j].infos.length;
                         }
                     }
@@ -451,7 +452,7 @@
         }
     })
     toInfoPage = function (id) {
-
+debugger
         let dataStr = {
             id:id
         };
@@ -464,14 +465,29 @@
             vm.htmlTitle=i.title;
             vm.htmlInfo=i.content;
         })
-    }
-    toPage = function () {
-        debugger;
-       var page= vm.pageCount/vm.pageSize;
-        if (page>vm.currentPage){
-            vm.currentPage=vm.currentPage+1;
-        }else {
-            return false;
+    };
+
+    toPage = function (num) {//公司新闻分页
+        var page= vm.pageCount/vm.pageSize;
+        $('#xia').addClass("xiaClass");
+        $('#shang').addClass("shangClass");
+        $('.shangClass').show();
+        if (num==1){//下一页
+            if (page>vm.currentPage){
+                vm.currentPage=vm.currentPage+1;
+            }
+            if(page<=vm.currentPage) {
+                $('.xiaClass').hide()
+            }
+        }else {//上一页
+            $('.xiaClass').show();
+            if (vm.currentPage>1){
+                vm.currentPage=vm.currentPage-1;
+            }
+            if (vm.currentPage<=1){
+                $('.shangClass').hide()
+            }
         }
+        return false;
     }
 </script>

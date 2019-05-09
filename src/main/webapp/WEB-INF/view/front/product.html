@@ -157,10 +157,10 @@
                     <div class="footer-left col-sm-8" style="z-index:9999;">
                         <dl v-for="list in listBottom">
                             <dt>
-                                <a href="javascript:void (0)">{{list.name}}</a>
+                                <a  onclick="changeHtmlInfo(list,null)">{{list.name}}</a>
                             </dt>
                             <dd v-for="list1 in list.infos">
-                                <a href="javascript:void (0)">
+                                <a  onclick="changeHtmlInfo(list,list1)">
                                     {{list1.title}}
                                 </a>
                             </dd>
@@ -316,6 +316,8 @@
 <script>
     var url;
     var id=getUrlParms('id');
+    var info=getUrlParms('info');
+    debugger;
     var vm = new Vue({
         el:"#page",
         data:{
@@ -359,5 +361,9 @@
             vm.htmlTitle=i.title;
             vm.htmlInfo=i.content;
         })
+    }
+
+    if (info!=null){
+        toInfoPage(info);
     }
 </script>

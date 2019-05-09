@@ -165,6 +165,7 @@ function getRootPath(){
 }
 
 function changeHtml(obj) {
+
     var id =$(obj).next().val();
     //console.log(id);
     if(id == 1){
@@ -179,6 +180,36 @@ function changeHtml(obj) {
         window.location.href = "/web/service?id="+id;
     }else if(id == 6){
         window.location.href = "/web/connection?id="+id;
+    }
+}
+function changeHtmlInfo(obj1,obj2) {
+    debugger
+    var id;
+    var info;
+    var url="";
+    if (obj1.pid!=0){
+        id=obj1.pid;
+    }else {
+        id=obj1.id;
+    }
+    url="?id="+id;
+    if (obj2!=null) {//进页面
+        info=obj2.id;
+        url=url+"&info="+info;
+    }
+    //console.log(id);
+    if(id == 1){
+        window.location.href = "/web/product"+url;
+    }else if(id == 2){
+        window.location.href = "/web/project"+url;
+    }else if(id == 3){
+        window.location.href = "/web/viewpoint"+url;
+    }else if(id == 4){
+        window.location.href = "/web/case"+url;
+    }else if(id == 5){
+        window.location.href = "/web/service"+url;
+    }else if(id == 6){
+        window.location.href = "/web/connection"+url;
     }
 }
 function getUrlParms(id){

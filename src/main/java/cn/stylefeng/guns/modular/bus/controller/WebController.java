@@ -45,43 +45,49 @@ public class WebController {
 
     //产品
     @RequestMapping("/product")
-    public String product1(Model model, Integer id) {
+    public String product1(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "product.html ";
     }
 
     //方案
     @RequestMapping("/project")
-    public String project(Model model, Integer id) {
+    public String project(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "project.html ";
     }
 
     //观点
     @RequestMapping("/viewpoint")
-    public String viewpoint(Model model, Integer id) {
+    public String viewpoint(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "viewpoint.html ";
     }
 
     //案例
     @RequestMapping("/case")
-    public String toCase(Model model, Integer id) {
+    public String toCase(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "case.html ";
     }
 
     //服务
     @RequestMapping("/service")
-    public String service1(Model model, Integer id) {
+    public String service1(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "service.html ";
     }
 
     //联系我们
     @RequestMapping("/connection")
-    public String connection(Model model, Integer id) {
+    public String connection(Model model, Integer id,Integer info) {
         model.addAttribute("id", id);
+        model.addAttribute("info", info);
         return PREFIX + "connection.html ";
     }
 

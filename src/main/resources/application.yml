@@ -89,3 +89,5 @@ spring:
     filters: wall,mergeStat
 guns:
   file-upload-path: /root/zkly/upload
+server:
+  port: 1033

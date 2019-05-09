@@ -11,3 +11,6 @@
 .gallery-grid, .gallery-masonry {margin: -1px}
 
 .onepress-menu>li>a{cursor: pointer}
+[v-cloak]{
+    display: none;
+}

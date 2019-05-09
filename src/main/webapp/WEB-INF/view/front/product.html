@@ -316,6 +316,9 @@
 <script>
     var url;
     var id=getUrlParms('id');
+    if (id==null){
+        id=1;
+    }
     var info=getUrlParms('info');
     debugger;
     var vm = new Vue({

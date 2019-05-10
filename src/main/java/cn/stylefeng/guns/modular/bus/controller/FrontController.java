@@ -12,7 +12,7 @@ public class FrontController extends BaseController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("id", 1);
-        return PREFIX + "product.html";
+
+        return PREFIX + "index.html";
     }
 }

@@ -50,6 +50,7 @@ TitleInfoDlg.collectData = function() {
     .set('pid')
     .set('filePath')
     .set('sortOrder')
+    .set('isMenu')
     .set('createTime')
     .set('createUser')
     .set('file')

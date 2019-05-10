@@ -156,7 +156,7 @@
                 </section>
                 <!--end 公司介绍-->
                 <!--合作伙伴-->
-                <section v-for="(info,index) in listInfo" v-if="index==1"  id="Partners" class="section-team section-padding section-meta onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index==1"  :id="info.id" class="section-team section-padding section-meta onepage-section">
                     <div class="container">
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.name}}</h2>
@@ -177,9 +177,10 @@
                 </section>
                 <!--end 合作伙伴-->
                 <!--公司新闻-->
-                <section  v-for="(info,index) in listInfo" v-if="index==2" id="News" class="section-news section-padding onepage-section">
+                <section  v-for="(info,index) in listInfo" v-if="index==2" :id="info.id" class="section-news section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
+                            <p></p>
                             <h2 class="section-title">{{info.name}}</h2>
                         </div>
                         <div class="section-content">
@@ -218,7 +219,7 @@
                 </section>
                 <!--end 公司新闻-->
                 <!-- 加入我们-->
-                <section  v-for="(info,index) in listInfo" v-if="index==3"  id="JoinUs" class="section-contact section-padding  section-meta onepage-section">
+                <section  v-for="(info,index) in listInfo" v-if="index==3"  :id="info.id" class="section-contact section-padding  section-meta onepage-section">
                     <div class="container">
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.name}}</h2>
@@ -231,7 +232,7 @@
                 </section>
                 <!--end 加入我们-->
                 <!--联系我们-->
-                <section v-for="(info,index) in listInfo" v-if="index==4" id="Contact" class="section-contact section-padding onepage-section">
+                <section v-for="(info,index) in listInfo" v-if="index==4" :id="info.id" class="section-contact section-padding onepage-section">
                     <div class="container">
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.name}}</h2>
@@ -255,10 +256,10 @@
                     <div class="footer-left col-sm-8" style="z-index:9999;">
                         <dl v-for="list in listBottom">
                             <dt>
-                                <a href="javascript:void (0)">{{list.name}}</a>
+                                <a  v-on:click="changeHtmlInfo(list,null)">{{list.name}}</a>
                             </dt>
                             <dd v-for="list1 in list.infos">
-                                <a href="javascript:void (0)">
+                                <a  v-on:click="changeHtmlInfo(list,list1)">
                                     {{list1.title}}
                                 </a>
                             </dd>
@@ -414,6 +415,7 @@
 <script>
     var url;
     var id=getUrlParms('id');
+    var info=getUrlParms('info');
     var vm = new Vue({
         el:"#page",
         data:{
@@ -452,7 +454,6 @@
         }
     })
     toInfoPage = function (id) {
-debugger
         let dataStr = {
             id:id
         };
@@ -489,5 +490,19 @@ debugger
             }
         }
         return false;
+    }
+    if (info!=null){
+        let dataStr = {
+            id:id
+        };
+        url="/web/list";
+        ajax.data("post",true,url,"json",dataStr,function (data) {
+            for(var j=0;j<data.data.infos.length;j++){
+                if (data.data.infos[j].id==info){
+                    var infoId='#'+info
+                    document.getElementById(info).scrollIntoView(true);
+                }
+            }
+        })
     }
 </script>

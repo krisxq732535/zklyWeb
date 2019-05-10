@@ -2,7 +2,6 @@
 <div class="ibox float-e-margins">
     <div class="ibox-content">
         <div class="form-horizontal">
-            <form  method="post" id="forms" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-6 b-r">
                     <#input id="id" name="" value="${item.id}" type='hidden' />
@@ -24,12 +23,29 @@
                     @}
                     @}
                 </#select>
-
-                    <#avatar id="filePath" name="图片" underline="true" avatarImg="${item.filePath}"/>
-                    <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
+                <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
                 </div>
+            <div class="col-sm-6">
+                <#select id="isMenu" name="0不在底部显示 1在底部显示" underline="true">
+                <option value="0"
+                        @if(item.isMenu=='0'){
+                        selected
+                        @}
+                >
+                    0
+                </option>
+                <option value="1"
+                        @if(item.isMenu=='1'){
+                        selected
+                        @}
 
-            </div>
+                >
+                    1
+                </option>
+            </#select>
+            <#avatar id="filePath" name="图片" underline="true" avatarImg="${item.filePath}"/>
+
+        </div>
 
             <div class="row btn-group-m-t">
                 <div class="col-sm-10">
@@ -37,7 +53,7 @@
                     <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="TitleInfoDlg.close()"/>
                 </div>
             </div>
-            </form>
+
         </div>
 
     </div>

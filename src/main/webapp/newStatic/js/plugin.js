@@ -182,8 +182,8 @@ function changeHtml(obj) {
         window.location.href = "/web/connection?id="+id;
     }
 }
-function changeHtmlInfo(obj1,obj2) {
-    debugger
+ changeHtmlInfo= function(obj1,obj2) {
+
     var id;
     var info;
     var url="";

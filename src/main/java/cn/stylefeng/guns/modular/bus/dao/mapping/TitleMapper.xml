@@ -22,6 +22,7 @@
     <resultMap id="selectDownMenuMap" type="cn.stylefeng.guns.modular.bus.model.Title">
         <id column="id" property="id" />
         <result column="name" property="name" />
+        <result column="pid" property="pid" />
         <collection property="infos" ofType="cn.stylefeng.guns.modular.bus.model.Info">
             <id column="id1" property="id" />
             <result column="title" property="title" />
@@ -32,10 +33,11 @@
           wt.id,
           wt.name,
           wi.id as id1,
-          wi.title as title
+          wi.title as title,
+          wt.pid
       FROM web_title wt LEFT JOIN web_info wi
-        ON wt.id=wi.type
-      WHERE wt.is_menu=1 AND wi.is_menu=1
+        ON wt.id=wi.type AND wi.is_menu=1
+      WHERE wt.is_menu=1 AND pid!=6
       ORDER BY wt.sort_order,wi.sort_order
     </select>
     <!--统计点击量-->

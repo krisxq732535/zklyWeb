@@ -44,9 +44,33 @@ public class TitleServiceImpl extends ServiceImpl<TitleMapper, Title> implements
         List<Title> titleDown = titleMapper.selectDownMenu();
         for (Title title : titleDown) {
             title.setType(1);
-            for (Info info : title.getInfos()) {
-                info.setType(2);
+            if (title.getId()==6){
+                title.getInfos().clear();
+                //查询关于我们
+                wrapper=new EntityWrapper<Title>();
+                wrapper.eq("pid",6);
+                wrapper.eq("is_menu",1);
+                List<Title> guanyu = titleMapper.selectList(wrapper);
+                if (guanyu.size()>0){
+                    for (Title title1 : guanyu) {
+                        Info info=new Info();
+                        info.setId(title1.getId());
+                        info.setTitle(title1.getName());
+                        title.getInfos().add(info);
+                    }
+                }
+              /*  Wrapper<Info> infoWrapper=new EntityWrapper<Info>();
+                wrapper.eq("pid",6);
+                wrapper.eq("is_menu",1);
+                List<Info> infos = infoMapper.selectList(infoWrapper);
+                title.getInfos().addAll(infos);*/
+            }else {
+                for (Info info : title.getInfos()) {
+
+                    info.setType(2);
+                }
             }
+
         }
         map.put("titleOn",titleOn);
         map.put("titleDown",titleDown);

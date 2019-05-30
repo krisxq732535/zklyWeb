@@ -224,7 +224,7 @@
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.name}}</h2>
                             <p></p>
-                            <p>s</p>
+                            <p></p>
                             <div v-for="infoTwo in info.infos" v-if="index==3" class="service-content" v-html="infoTwo.content" style="text-align:left">
                             </div>
                         </div>
@@ -306,9 +306,19 @@
 <!--Banner和文字-->
 <script type="text/javascript">
     (function () {
+        var titles = JSON.parse(sessionStorage.getItem("listTop"));
+        var id=getUrlParms('id');
+        var path='';
+
+        for(var j=0;j<titles.length;j++){
+            if(titles[j].id==id){
+                path='[&quot;/kaptcha/'+titles[j].filePath+'&quot;]';
+                break;
+            }
+        }
         //Banner图
         var bannerDiv = document.getElementById("hero");
-        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=48B9CCA1B7994E8DA7BA6AF5A05146B3&quot;]';
+        var bannerIllustration =path;
         bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
 
         //Banner文字
@@ -422,6 +432,7 @@
             listTop:[],
             listBottom:[],
             listInfo:[],
+            titlePath:"",
             htmlTitle:"",
             htmlInfo:"",
             pageCount:0,
@@ -465,6 +476,7 @@
             var i=data.data.info;
             vm.htmlTitle=i.title;
             vm.htmlInfo=i.content;
+            vm.titlePath='[&quot;/kaptcha/'+data.data.title.filePath+'&quot;]';
         })
     };
 
@@ -504,5 +516,11 @@
                 }
             }
         })
+    }
+    imageShow=function (path) {
+
+
+
+
     }
 </script>

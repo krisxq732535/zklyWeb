@@ -183,6 +183,7 @@
     </footer>
     <!--end 底部-->
 </div><!-- #page -->
+<input type="hidden" id="filePath">
 <div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
 <script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
 <script type='text/javascript' src='/newStatic/js/plugins.js'></script>
@@ -204,16 +205,24 @@
 </body>
 </html>
 
-<!--Banner和文字-->
 <script type="text/javascript">
     (function () {
+        var titles = JSON.parse(sessionStorage.getItem("listTop"));
+        var id=getUrlParms('id');
+        var path='';
+        for(var j=0;j<titles.length;j++){
+            if(titles[j].id==id){
+                path='[&quot;/kaptcha/'+titles[j].filePath+'&quot;]';
+                break;
+            }
+        }
         //Banner图
         var bannerDiv = document.getElementById("hero");
-        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=1B3AA878367349FCA94E003AA6FF7789&quot;]';
+        var bannerIllustration =path;
         bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
 
         //Banner文字
-        var bannerText = '',
+        var bannerText = '<p style="white-space: normal;">&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula SRM 5.0&lt;/h2&gt;&lt;p class=&quot;hero-small-text&quot;&gt;nebula MOM Suite的主要产品之一，&lt;strong&gt;促进了企业实现平台一体化运行管理&lt;/strong&gt;&lt;br&gt;实现各业务的紧密协作，避免了信息孤岛。&lt;/p&gt;&lt;a href=&quot;Blog/4C89F962D6B14452BFEB8E462C446C5E/“星云”再诞“新星”-中科联云正式发布供应商关系管理系统5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp; &nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula WMS 5.0&lt;/h2&gt;</p><p>&nbsp; &nbsp;&lt;p class=&quot;hero-small-text&quot;&gt;nebula MOM Suite的主要产品之一，&lt;strong&gt;用于支撑制造企业供应链运营，&lt;/strong&gt;&lt;br&gt;对原料、制品和成品进行入出库及在库管理。&lt;/p&gt;</p><p>&nbsp; &nbsp;&lt;a href=&quot;Blog/6F404D21EF5440C5B6B8AFC6E7CD44B4/“星云”再诞“新星”-中科联云正式发布智能仓储管理系统5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp; &nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;物联网产品nebula IoT Enabler 5.0&lt;/h2&gt;</p><p>&nbsp; &nbsp;&lt;p class=&quot;hero-small-text&quot;&gt; 面向采集监控软件市场，&lt;strong&gt;作为工业自动化软件中的基础平台软件，&lt;/strong&gt;&lt;br&gt;可为各行业提供解决方案&lt;/p&gt;</p><p>&nbsp; &nbsp;&lt;a href=&quot;Blog/21C842A180AB467DAC55E1A57BCD837D/中科联云发布物联网产品nebula+IoT+Enabler+5+0&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p>&lt;div class=&quot;hero__content hero-content-style1&quot; style=&quot;max-height:80%;display:none&quot;&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class=&quot;hero-large-text&quot; style=&quot;text-transform:unset&quot;&gt;中科联云nebula™智能制造平台 &lt;span class=&quot;js-rotating&quot;&gt;&lt;/h2&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class=&quot;hero-small-text&quot;&gt; 平台包含&lt;strong&gt;底层技术平台、制造运营管理套件和业务智能模块&lt;/strong&gt;&lt;br&gt;覆盖制造业上下游各个环节，引领企业数字化重塑.&lt;/p&gt;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;/Product&quot; class=&quot;btn btn-theme-primary btn-lg&quot;&gt;了解更多&lt;/a&gt;</p><p>&lt;/div&gt;</p><p><br/></p>',
             containerDiv = document.getElementById("bannerText"),
             decodeBannerText = decodeHtml(bannerText);
         if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
@@ -339,13 +348,6 @@
         },
         methods:{
             dataTableList:function () {
-                url="/web/menu";
-                ajax.data("post",true,url,"json",'',function (data) {
-                    vm.listTop = data.data.titleOn;
-                    vm.listBottom = data.data.titleDown;
-                    sessionStorage.setItem("listTop", JSON.stringify(data.data.titleOn));
-                    sessionStorage.setItem("listBottom", JSON.stringify(data.data.titleDown));
-                })
                 let dataStr = {
                     id:id
                 };
@@ -376,3 +378,4 @@
         toInfoPage(info);
     }
 </script>
+

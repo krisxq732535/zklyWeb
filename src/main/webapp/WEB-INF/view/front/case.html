@@ -202,9 +202,19 @@
 <!--Banner和文字-->
 <script type="text/javascript">
     (function () {
+        var titles = JSON.parse(sessionStorage.getItem("listTop"));
+        var id=getUrlParms('id');
+        var path='';
+
+        for(var j=0;j<titles.length;j++){
+            if(titles[j].id==id){
+                path='[&quot;/kaptcha/'+titles[j].filePath+'&quot;]';
+                break;
+            }
+        }
         //Banner图
         var bannerDiv = document.getElementById("hero");
-        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=33B9E7E71C524164A7ADA39AFC368DAB&quot;]';
+        var bannerIllustration =path;
         bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
 
         //Banner文字

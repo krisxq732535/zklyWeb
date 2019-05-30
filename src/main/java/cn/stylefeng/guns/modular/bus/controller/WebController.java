@@ -132,6 +132,7 @@ public class WebController {
             }
         }
         result.getData().put("infos", titles);
+        result.getData().put("title", title);
         return result;
     }
 

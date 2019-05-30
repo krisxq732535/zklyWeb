@@ -224,9 +224,18 @@
 <!--Banner和文字-->
 <script type="text/javascript">
     (function () {
+        var titles = JSON.parse(sessionStorage.getItem("listTop"));
+        var id=getUrlParms('id');
+        var path='';
+        for(var j=0;j<titles.length;j++){
+            if(titles[j].id==id){
+                path='[&quot;/kaptcha/'+titles[j].filePath+'&quot;]';
+                break;
+            }
+        }
         //Banner图
         var bannerDiv = document.getElementById("hero");
-        var bannerIllustration = '[&quot;https://oa.bsjtech.net/ThumbnailHandler.ashx?width=1920&height=400&&displayMode=0&file=B9D80B58338D4259AE7CDEE3440F740D&quot;]';
+        var bannerIllustration =path;
         bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
 
         //Banner文字

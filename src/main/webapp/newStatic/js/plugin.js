@@ -182,7 +182,7 @@ function changeHtml(obj) {
         window.location.href = "/web/connection?id="+id;
     }
 }
- changeHtmlInfo= function(obj1,obj2) {
+ changeHtmlInfo= function(obj1,obj2) {//查看详情
 
     var id;
     var info;

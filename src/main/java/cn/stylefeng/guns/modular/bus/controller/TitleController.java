@@ -91,7 +91,9 @@ public class TitleController extends BaseController {
             wrapper.like(condition!=null,"name",condition);
         List<Title> titles = titleService.selectList(wrapper);
         for (Title title : titles) {
-            if (title.getPid()!=0){
+            if (title.getPid()==-1){
+                title.setPidName("参数设置");
+            }else if (title.getPid()!=0){
                 for (Title title1 : titles) {
                     if (title.getPid()==title1.getId()){
                         title.setPidName(title1.getName());

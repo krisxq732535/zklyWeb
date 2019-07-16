@@ -55,7 +55,8 @@ TitleInfoDlg.collectData = function() {
     .set('createUser')
     .set('file')
     .set('updateTime')
-    .set('updateUser');
+    .set('updateUser')
+    .set('desc');
 }
 
 /**

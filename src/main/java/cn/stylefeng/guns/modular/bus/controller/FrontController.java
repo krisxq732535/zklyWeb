@@ -13,6 +13,6 @@ public class FrontController extends BaseController {
     @RequestMapping("/")
     public String index(Model model) {
 
-        return PREFIX + "product.html";
+        return PREFIX + "index.html";
     }
 }

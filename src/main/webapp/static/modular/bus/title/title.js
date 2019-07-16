@@ -19,6 +19,7 @@ Title.initColumn = function () {
             {title: '父标题', field: 'pidName', visible: true, align: 'center', valign: 'middle'},
        /*     {title: '图片路径', field: 'filePath', visible: true, align: 'center', valign: 'middle'},*/
             {title: '排序', field: 'sortOrder', visible: true, align: 'center', valign: 'middle'},
+            {title: '描述', field: 'desc', visible: true, align: 'center', valign: 'middle'},
             //{title: '创建时间', field: 'createTime', visible: true, align: 'center', valign: 'middle'},
             //{title: '创建人', field: 'createUser', visible: true, align: 'center', valign: 'middle'},
             //{title: '修改时间', field: 'updateTime', visible: true, align: 'center', valign: 'middle'},

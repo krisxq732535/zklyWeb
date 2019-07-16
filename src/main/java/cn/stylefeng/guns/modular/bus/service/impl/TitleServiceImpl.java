@@ -37,6 +37,10 @@ public class TitleServiceImpl extends ServiceImpl<TitleMapper, Title> implements
         Map<String,Object> map=new HashedMap();
         Wrapper<Title> wrapper=new EntityWrapper<Title>();
         wrapper.eq("pid",0);
+        Title title2=new Title();
+        title2.setDesc("gywm");
+        Title title3 = titleMapper.selectOne(title2);
+        System.out.println(title3);
         List<Title> titleOn = titleMapper.selectList(wrapper);
         for (Title title : titleOn) {
             title.setType(1);
@@ -44,11 +48,11 @@ public class TitleServiceImpl extends ServiceImpl<TitleMapper, Title> implements
         List<Title> titleDown = titleMapper.selectDownMenu();
         for (Title title : titleDown) {
             title.setType(1);
-            if (title.getId()==6){
+            if (title.getId().intValue()==title3.getId()){
                 title.getInfos().clear();
                 //查询关于我们
                 wrapper=new EntityWrapper<Title>();
-                wrapper.eq("pid",6);
+                wrapper.eq("pid",title3.getId());
                 wrapper.eq("is_menu",1);
                 List<Title> guanyu = titleMapper.selectList(wrapper);
                 if (guanyu.size()>0){
@@ -59,11 +63,6 @@ public class TitleServiceImpl extends ServiceImpl<TitleMapper, Title> implements
                         title.getInfos().add(info);
                     }
                 }
-              /*  Wrapper<Info> infoWrapper=new EntityWrapper<Info>();
-                wrapper.eq("pid",6);
-                wrapper.eq("is_menu",1);
-                List<Info> infos = infoMapper.selectList(infoWrapper);
-                title.getInfos().addAll(infos);*/
             }else {
                 for (Info info : title.getInfos()) {
 

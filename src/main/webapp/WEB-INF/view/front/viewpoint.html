@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <title>中科联云</title>
-    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <title>华顺机电</title>
+    <link href="/newStatic/picture/icon.ico" rel="shortcut icon">
     <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
@@ -68,7 +68,7 @@
             <div class="site-branding">
                 <div class="site-brand-inner has-logo-img no-desc">
                     <div class="site-logo-div">
-                        <a href="/" class="custom-logo-link"><img height="66" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                        <a href="/" class="custom-logo-link"><img  src="/newStatic/picture/logo3.png" class="custom-logo" alt="华顺机电" /></a>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,9 @@
 
                 <!--banner图文字-->
                 <div class="container" style="padding-top:23%;color:#fff">
-
+                    <div class="hero__content hero-content-style1" style="max-height:80%">
+                        <h2 class="hero-large-text"></span></h2>
+                    </div>
                 </div>
             </section>
             <div id="info" style="display: none"  class="section-title-area">
@@ -161,16 +163,16 @@
                         <div class="footer-left col-sm-4">
 
                             <div class="share col-sm-5" style="text-align:center;margin:15px">
-                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
-                                官方微信
+                                <img style="margin:0 auto;display:block" :src="'/kaptcha/'+setting.filePath" />
+                                {{setting.name}}
                             </div>
                         </div>
-                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">{{setting.descs[0]}}</div>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">{{setting.descs[1]}}</section>
     </footer>
     <!--end 底部-->
 </div><!-- #page -->
@@ -325,10 +327,13 @@
             listBottom:[],
             listInfo:[],
             htmlTitle:"",
-            htmlInfo:""
+            htmlInfo:"",
+            setting:'',
+            titleName:'',
         },
         created:function () {
             this.dataTableList();
+            this.setting = JSON.parse(sessionStorage.getItem("setting"));
             this.listTop = JSON.parse(sessionStorage.getItem("listTop"));
             this.listBottom = JSON.parse(sessionStorage.getItem("listBottom"));
         },
@@ -342,7 +347,8 @@
                 };
                 url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-                    vm.listInfo=data.data.infos[0].infos
+                    vm.listInfo=data.data.infos[0].infos;
+                    vm.titleName=data.data.title.desc
                 })
             },
         }

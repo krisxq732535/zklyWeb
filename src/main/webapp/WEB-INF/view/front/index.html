@@ -1,26 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>华顺机电</title>
+    <link href="/newStatic/picture/icon.ico" rel="shortcut icon">
+    <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/mystyle.css" type="text/css" media="all" />
+    <link rel='stylesheet' href='/newStatic/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='/newStatic/css/buttons.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="/newStatic/css/index.css">
+    <style type='text/css'>
 
+    </style>
+    <link rel='stylesheet' href='newStatic/css/lightgallery.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <script src="newStatic/js/html5shiv.js"></script>
+    <script src="newStatic/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 7]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 6]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+    <!--[if IE 5]>
+    <style>
+        #page{display:none;}
+        #notsupport{display:block !important;}
+    </style>
+    <![endif]-->
+
+
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var onepress_js_settings = { "onepress_disable_animation": "", "onepress_disable_sticky_header": "", "onepress_vertical_align_menu": "", "hero_animation": "flipInX", "hero_speed": "5000", "hero_fade": "750", "hero_duration": "5000", "is_home": "", "gallery_enable": "1" };
+        /* ]]> */
+    </script>
+
+
+    <script type='text/javascript' src='/newStatic/js/jquery.js'></script>
+    <script type='text/javascript' src='/newStatic/js/myjs.js'></script>
+    <script type='text/javascript' src='/newStatic/js/jquery-migrate.min.js'></script>
+
+</head>
+
+<body class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-4 wp-custom-logo sticky-header no-header-transparent">
+<div id="page" class="hfeed site" v-cloak>
+    <!--头部-->
+    <header id="masthead" class="site-header fixed" role="banner">
+        <div class="container">
+            <!--logo-->
+            <div class="site-branding">
+                <div class="site-brand-inner has-logo-img no-desc">
+                    <div class="site-logo-div">
+                        <a href="/" class="custom-logo-link"><img style="margin-top: 3px"  src="/newStatic/picture/logo3.png" class="custom-logo" alt="华顺机电" /></a>
+                    </div>
+                </div>
+            </div>
+            <!--end logo-->
+            <!--导航-->
+            <div class="header-right-wrapper">
+                <a href="#0" id="nav-toggle">Menu<span></span></a>
+                <nav id="site-navigation" class="main-navigation">
+                    <ul class="onepress-menu">
+                        <li v-for="list in listTop" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a onclick="changeHtml(this)">{{list.name}}</a>
+                            <input type="hidden" v-bind:value="list.id">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--end 导航 -->
+        </div>
+    </header>
+    <!--end 头部-->
+    <!--中间内容-->
+    <div id="content" class="site-content">
+
+
+
+        <link href="css/video-js.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/newStatic/js/video.js"></script>
+        <script type="text/javascript" src="/newStatic/js/zh.js"></script>
+
+        <style>
+            .black_overlay {
+                display: none;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                z-index: 1001;
+                -moz-opacity: 0.8;
+                opacity: .80;
+                filter: alpha(opacity=80);
+            }
+
+            .white_content {
+                display: none;
+                position: absolute;
+                /*top: 61%;*/
+                left: 10%;
+                width: 80%;
+                background-color: black;
+                z-index: 1002;
+                overflow: auto;
+            }
+            .carousel-indicators li {
+                width: 30px;
+                height: 8px;
+                margin-right: 3px;
+                margin-left: 3px;
+
+            }
+
+            .carousel-indicators li {
+                width: 30px;
+                height: 8px;
+                margin-right: 3px;
+                margin-left: 3px;
+                background-color:#3EE3ED
+            }
+            .carousel-indicators li.active {
+                background-color: #1296DB;
+            }
+        </style>
+
+        <!--banner图-->
+        <section id="hero" class="hero-slideshow-wrapper hero-slideshow-normal">
+            <!--加载中图标-->
+            <div class="slider-spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+
+            <!--banner图文字-->
+            <div id="bannerText" class="container" style="padding-bottom: 0%;color:#fff">
+               <div class="hero__content hero-content-style1" style="height: 301px;">
+                </div>
+            </div>
+        </section>
+        <!--我们的观点-->
+        <section id="about" v-for="(title,index) in infoList" v-if="index==0" class="section-about section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,null)">
+                        <h2 class="section-title">
+                            {{title.name}}
+                        </h2>
+                    </a>
+                </div>
+                <div class="row">
+                    <div v-for="info in title.infos" class="col-lg-6 col-sm-6  wow slideInUp">
+                        <div class="about-image" style="text-align:center;">
+                            <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,info)">
+
+                                <img width="640" :src="'/kaptcha/'+info.iconPath" class="attachment-onepress-medium size-onepress-medium wp-post-image" sizes="(max-width: 640px) 100vw, 640px" />
+                            </a>
+                        </div>
+                        <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,info)">
+                            <h3 class="itemAlign">{{info.title}}</h3>
+                        </a>
+                        <p>{{info.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </section><!--end 我们的观点-->
+        <!--我们的案例-->
+        <section id="cases"  v-for="(title,index) in infoList" v-if="index==1" class="section-team section-padding section-meta onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,null)">
+                        <h2 class="section-title">
+                            {{title.name}}
+                        </h2>
+                    </a>
+                </div>
+                <div class="caseWrap" id="cases">
+                    <div class="team-members row team-layout-4 caseList">
+                        <!--案例列表-->
+                        <div v-for="info in title.infos" class="team-member" style="margin-bottom:0px;">
+                            <div class="member-thumb">
+                                <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,info)">
+                                    <img width="240" height="150" class="case-Img" :src="'/kaptcha/'+info.iconPath" alt="" sizes="(max-width: 240px) 100vw, 240px">
+                                </a>
+                            </div>
+                            <div class="member-info">
+                                <a href="javascript:void (0)" v-on:click="changeHtmlInfo(title,info)">
+                                    <h5 class="member-name">{{info.title}}</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!--end 案例列表-->
+                    </div>
+                    <a class="left carousel-control carousel-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="icon-prev" aria-hidden="true" style="background-color:#E60012"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control carousel-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="icon-next" aria-hidden="true" style="background-color:#E60012"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--end 我们的案例-->
+        <!--公司新闻-->
+        <section id="news"  v-for="(title,index) in infoList" v-if="index==2" class="section-news section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <a href="javascript:void (0)" :href="'/web/connection?id='+title.pid+'&info='+title.id">
+                        <h2 class="section-title">
+                            {{title.name}}
+                        </h2>
+                    </a>
+                </div>
+                <div class="section-content blog-entry wow slideInUp">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!--新闻列表-->
+                            <article v-for="info in title.infos"  id="post-37" class="list-article clearfix post-37 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-one-page category-responsive tag-export article-height">
+                                <div class="list-article-thumb">
+                                    <a href="javascript:void (0)" :href="'/web/connection?id='+title.pid+'&info='+title.id+'&showMany='+info.id">
+                                        <img width="130" :src="'/kaptcha/'+info.iconPath" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" />
+
+                                    </a>
+                                </div>
+                                <div class="list-article-content">
+                                    <header class="entry-header">
+                                        <h4 class="entry-title"><a :href="'/web/connection?id='+title.pid+'&info='+title.id+'&showMany='+info.id">{{info.title}}</a></h4>
+                                    </header>
+                                    <div class="entry-excerpt">
+                                        <p class="cont">{{info.desc}}</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div style="text-align:center;" class="ReadMore">
+                        <a :href="'/web/connection?id='+title.pid+'&info='+title.id" class="button button-raised button-primary button-pill" style="font-family:SimHei;font-weight:bold">阅读更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end 公司新闻-->
+        <!--关于我们-->
+        <section v-for="(title,index) in infoList" v-if="index==4" :id="info.id" class="section-contact section-padding onepage-section">
+            <div class="container">
+                <div class="section-title-area">
+                    <h2 class="section-title">{{info.name}}</h2>
+                </div>
+                <div class="service-content" v-for="infoTwo in title.infos"  v-html="infoTwo.content">
+                </div>
+            </div>
+        </section>
+        <!--end 关于我们-->
+    </div>
+    <!-- end 中间内容 -->
+    <!--底部-->
+    <footer class="site-footer">
+        <div class="footer-connect">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-left col-sm-8" style="z-index:9999;">
+                        <dl v-for="list in listBottom">
+                            <dt>
+                                <a  v-on:click="changeHtmlInfo(list,null)">{{list.name}}</a>
+                            </dt>
+                            <dd v-for="list1 in list.infos">
+                                <a  v-on:click="changeHtmlInfo(list,list1)">
+                                    {{list1.title}}
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="footer-left col-sm-4">
+
+                            <div class="share col-sm-5" style="text-align:center;margin:15px">
+                                <img style="margin:0 auto;display:block" :src="'/kaptcha/'+setting.filePath" />
+                                {{setting.name}}
+                            </div>
+                        </div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px" v-if='setting.descs != null'>{{setting.descs[0]}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="copyright" style="font-size:0.75em;color:#ccc" v-if='setting.descs != null'>{{setting.descs[1]}}</section>
+    </footer>
+    <!--end 底部-->
+</div><!-- #page -->
+
+<div id="notsupport" style="display:none; text-align:center;"><img src="/newStatic/picture/notsupport.jpg" />很抱歉，本网站不支持IE8 及以下版本的IE浏览器</div>
+<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
+<script type='text/javascript' src='/newStatic/js/plugins.js'></script>
+<script type='text/javascript' src='/newStatic/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='/newStatic/js/jquery.superslide.2.1.1.js'></script>
+<script type='text/javascript' src='/newStatic/js/theme.js'></script>
+<script type="text/javascript" src="/newStatic/js/vue.min.js"></script>
+<script type="text/javascript" src="/newStatic/js/plugin.js"></script>
+
+<script>
+
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?721d35f06ef55f9520c9c87094e876e1";
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </body>
 </html>
-<script type="text/javascript" src="/newStatic/js/jquery-1.12.4.min.js"></script>
-<script>
-    (function () {
-        url="/web/menu";
 
-        $.ajax({
-            type: 'get',
-            url: url,
-            dataType: 'json',
-            success: function(data){
-                sessionStorage.setItem("listTop", JSON.stringify(data.data.titleOn));
-                sessionStorage.setItem("listBottom", JSON.stringify(data.data.titleDown));
-                window.location.href = "/web/product?id=1";
-            }});
-       })();
+<!--Banner和文字-->
+<script type="text/javascript">
+    (function () {
+        //Banner图
+
+        var bannerDiv = document.getElementById("hero");
+        var bannerIllustration = '[&quot;/newStatic/picture/index.png&quot;]';
+        bannerDiv.setAttribute('data-images', decodeHtml(bannerIllustration));
+
+        //Banner文字
+        var bannerText ='',
+                containerDiv = document.getElementById("bannerText"),
+            decodeBannerText = decodeHtml(bannerText);
+        if (containerDiv != null && containerDiv != undefined && decodeBannerText != '') {
+            decodeBannerText = decodeBannerText.replace(new RegExp("<p>", "gm"), "").replace(new RegExp("</p>", "gm"), "");
+            decodeBannerText = decodeBannerText.replace(new RegExp("<a href=", "gm"), "</p><a href=");
+            containerDiv.innerHTML = containerDiv.innerHTML + decodeBannerText;
+        }
+
+        //bodyInnerHtml
+        var bodyInnerHTML = document.body.innerHTML;
+        document.body.innerHTML = bodyInnerHTML.replace(/\ufeff/g, '');
+    })();
+
+    function decodeHtml(s) {
+        var HTML_DECODE = {
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&nbsp;": " ",
+            "&quot;": "\"",
+            "&copy;": "",
+            // Add more
+        };
+
+        var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g;
+
+        var REGX_HTML_DECODE = /&\w+;|&#(\d+);/g;
+
+        var REGX_TRIM = /(^\s*)|(\s*$)/g;
+
+        s = (s != undefined) ? s : "";
+        return (typeof s != "string") ? s :
+            s.replace(REGX_HTML_DECODE,
+                function ($0, $1) {
+                    var c = HTML_DECODE[$0];
+                    if (c == undefined) {
+                        // Maybe is Entity Number
+                        if (!isNaN($1)) {
+                            c = String.fromCharCode(($1 == 160) ? 32 : $1);
+                        } else {
+                            c = $0;
+                        }
+                    }
+                    return c;
+                });
+    };
+</script>
+
+<!--视频-->
+<script type="text/javascript">
+    var videoIcon = document.getElementById("video_icon");
+    var closeIcon = document.getElementById("close_Icon");
+    var light = document.getElementById("light");
+    var embed = document.getElementsByTagName('embed')[0];
+    var video = document.getElementsByTagName('video')[0];
+
+    //打开弹出层
+    if (videoIcon != null) {
+        videoIcon.onclick = function (e) {
+            var point = getPointerPosition(e);  //获取鼠标点击按钮的位置，将其作为弹出层的top值
+            light.style.top = point.top + "px";
+            light.style.height = document.body.clientHeight * 0.9 + "px";
+            embed.style.height = document.body.clientHeight * 0.86 + "px";
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            //video.play();
+        }
+    }
+
+    //关闭弹出层
+    if (closeIcon != null) {
+        closeIcon.onclick = function () {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //video.pause();
+        }
+    }
+
+    //暂停/播放
+    if (video != null) {
+        video.onclick = function () {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    }
+
+    //获取鼠标点击位置
+    function getPointerPosition(e) {
+
+        var obj = e.currentTarget || document.activeElement;
+        var position = {
+            left: e.pageX || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft)),
+            top: e.pageY || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop))
+        };
+        return position;
+    }
+</script>
+<script>
+    var url;
+    var vm = new Vue({
+        el:"#page",
+        data:{
+            listTop:[],
+            listBottom:[],
+            infoList:[],
+            setting:''
+        },
+        created:function () {
+            this.dataTableList();
+        },
+        mounted:function () {
+
+        },
+        methods:{
+            dataTableList:function () {
+                url="/web/menu";
+                ajax.data("post",true,url,"json",'',function (data) {
+                    vm.listTop = data.data.titleOn;
+                    vm.listBottom = data.data.titleDown;
+                    vm.setting = data.data.setting;
+                    sessionStorage.setItem("setting", JSON.stringify(data.data.setting));
+                    sessionStorage.setItem("listTop", JSON.stringify(data.data.titleOn));
+                    sessionStorage.setItem("listBottom", JSON.stringify(data.data.titleDown));
+                })
+                url="/web/index";
+                ajax.data("post",true,url,"json",'',function (data) {
+                    vm.infoList=data.data.data;
+                })
+            },
+        }
+    })
 </script>

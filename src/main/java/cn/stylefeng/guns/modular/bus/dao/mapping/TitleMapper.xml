@@ -10,14 +10,15 @@
         <result column="sort_order" property="sortOrder" />
         <result column="create_time" property="createTime" />
         <result column="create_user" property="createUser" />
-        <result column="modify_time" property="updateTime" />
-        <result column="modify_user" property="updateUser" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="modify_user" property="modifyUser" />
         <result column="is_menu" property="isMenu" />
         <result column="hot" property="hot" />
+        <result column="desc" property="desc" />
     </resultMap>
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, pid, file_path, sort_order, create_time, create_user, modify_time, modify_user,is_menu,hot
+        id, name, pid, file_path, sort_order, create_time, create_user, modify_time, modify_user,is_menu,hot,desc
     </sql>
     <resultMap id="selectDownMenuMap" type="cn.stylefeng.guns.modular.bus.model.Title">
         <id column="id" property="id" />

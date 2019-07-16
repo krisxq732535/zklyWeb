@@ -1,6 +1,7 @@
 package cn.stylefeng.guns.modular.bus.controller;
 
 import cn.stylefeng.guns.config.properties.GunsProperties;
+import cn.stylefeng.guns.core.util.StringUtil2;
 import cn.stylefeng.guns.modular.bus.model.Info;
 import cn.stylefeng.guns.modular.bus.model.Result;
 import cn.stylefeng.guns.modular.bus.model.Title;
@@ -9,6 +10,7 @@ import cn.stylefeng.guns.modular.bus.service.ITitleService;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import org.apache.commons.collections.map.HashedMap;
+import org.apache.poi.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -85,9 +90,10 @@ public class WebController {
 
     //联系我们
     @RequestMapping("/connection")
-    public String connection(Model model, Integer id,Integer info) {
+    public String connection(Model model, Integer id,Integer info,Integer showMany) {
         model.addAttribute("id", id);
         model.addAttribute("info", info);
+        model.addAttribute("showMany", showMany);
         return PREFIX + "connection.html";
     }
 
@@ -96,7 +102,17 @@ public class WebController {
     @ResponseBody
     public Result menu() {
         Result result = new Result();
-        result.setDataMap(titleService.selectDownMenu());
+        Map<String, Object> map = titleService.selectDownMenu();
+        Wrapper<Title> wrapper = new EntityWrapper<Title>();
+        wrapper.eq("pid",-1);
+        wrapper.orderBy("sort_order",true);
+        wrapper.last("limit 1");
+        Title title = titleService.selectOne(wrapper);
+        if (StringUtil2.isNotEmpty(title.getDesc())){
+           title.setDescs(Arrays.asList(title.getDesc().split(",")));
+        }
+        map.put("setting",title);
+        result.setData(map);
         return result;
     }
 
@@ -145,5 +161,54 @@ public class WebController {
         result.getData().put("info", info);
         return result;
     }
+    @RequestMapping("index")
+    @ResponseBody
+    public Result index() {//查询主页数据
+        Result result = new Result();
+        Wrapper<Title> titleWrapper = new EntityWrapper<Title>();
+        List<Object> list=new ArrayList<>();
+        list.add("cp");
+        list.add("al");
+        list.add("gsdt");
+        list.add("gywm");
+        titleWrapper.in("`desc`",list);
+        titleWrapper.last("order by FIELD (`desc`,'cp','al','gsdt','gywm')");
+        List<Title> titles = titleService.selectList(titleWrapper);
+        Wrapper<Info> infoWrapper =null;
+        for (Title title : titles) {//
+            if (title.getDesc().equals("cp")){//
+                infoWrapper=new EntityWrapper<Info>();
+                infoWrapper.eq("type",title.getId());
+                infoWrapper.orderBy("sort_order",true);
+                infoWrapper.last("LIMIT 2");
+                List<Info> infos = infoService.selectList(infoWrapper);
+                title.setInfos(infos);
+            }else if (title.getDesc().equals("al")){
+                infoWrapper=new EntityWrapper<Info>();
+                infoWrapper.eq("type",title.getId());
+                infoWrapper.orderBy("sort_order",true);
+                infoWrapper.last("LIMIT 4");
+                List<Info> infos = infoService.selectList(infoWrapper);
+                title.setInfos(infos);
+            }else if (title.getDesc().equals("gsdt")){
+                infoWrapper=new EntityWrapper<Info>();
+                infoWrapper.eq("type",title.getId());
+                infoWrapper.orderBy("sort_order",true);
+                infoWrapper.last("LIMIT 4");
+                List<Info> infos = infoService.selectList(infoWrapper);
+                title.setInfos(infos);
+            }else if (title.getDesc().equals("gywm")){
+                infoWrapper=new EntityWrapper<Info>();
+                infoWrapper.eq("type",title.getId());
+                infoWrapper.orderBy("sort_order",true);
+                infoWrapper.last("LIMIT 1");
+                List<Info> infos = infoService.selectList(infoWrapper);
+                title.setInfos(infos);
+            }
+        }
+        result.getData().put("data",titles);
+        return result;
+    }
+    //查看更多
 
 }

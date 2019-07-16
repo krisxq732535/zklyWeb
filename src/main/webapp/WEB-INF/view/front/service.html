@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <title>中科联云</title>
-    <link href="/src/images/BSG.ico" rel="shortcut icon">
+    <title>华顺机电</title>
+    <link href="/newStatic/picture/icon.ico" rel="shortcut icon">
     <link rel='stylesheet' href='/newStatic/css/animate.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/newStatic/css/font-awesome.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/newStatic/css/bootstrap.min.css' type='text/css' media='all' />
@@ -83,7 +83,7 @@
             <div class="site-branding">
                 <div class="site-brand-inner has-logo-img no-desc">
                     <div class="site-logo-div">
-                        <a href="/" class="custom-logo-link"><img height="66" src="/newStatic/picture/logo3.png" class="custom-logo" alt="中科联云" /></a>
+                        <a href="/" class="custom-logo-link"><img  src="/newStatic/picture/logo3.png" class="custom-logo" alt="华顺机电" /></a>
                     </div>
                 </div>
             </div>
@@ -119,13 +119,16 @@
 
                 <!--banner图文字-->
                 <div class="container" style="padding-top: 23%; padding-bottom: 10%;color:#fff">
+                    <div class="hero__content hero-content-style1" style="max-height:80%">
+                        <h2 class="hero-large-text"></span></h2>
+                    </div>
                 </div>
             </section>
 
             <div class="content">
                 <!--咨询服务-->
-                <section v-for="info in listInfo " id="service_up" class="section-about onepage-section">
-                    <div class="container section-padding">
+                <section v-for="info in listInfo " :id="info.id" class="section-about onepage-section">
+                    <div class="container section-padding" >
                         <div class="section-title-area">
                             <h2 class="section-title">{{info.title}}</h2>
                         </div>
@@ -134,31 +137,6 @@
                         </div>
                     </div>
                 </section>
-                <!--end 咨询服务-->
-                <!--实施服务-->
-               <!-- <section id="service_center" class="section-services section-padding section-meta onepage-section">
-                    <div class="container section-padding">
-                        <div class="section-title-area">
-                            <h2 class="section-title">实施服务</h2>
-                        </div>
-                        <div class="service-content">
-                            <p style="line-height: 1.75em; text-indent: 0em;"><span style="font-size: 16px;">佰思杰在大量的制造管理系统实施过程中形成了自动化、信息化、精益化“三化融合”的实施方法论，即以精益思想为指导，交互推进制造信息化和自动化手段的实施应用，为企业在智能制造转型中实现价值落地。我们提供基于自主研发的Nebula系列产品的MOM全面或各领域解决方案设计、实施、二次开发服务，并将服务范围扩展到智能工厂、智能车间和智能产线的设计与交付，为客户提供一站式总包服务。</span></p><p><br/></p><p><br/></p>
-                        </div>
-                    </div>
-                </section>
-                &lt;!&ndash;end 实施服务&ndash;&gt;
-                &lt;!&ndash;运维服务&ndash;&gt;
-                <section id="service_down" class="section-about section-padding onepage-section">
-                    <div class="container section-padding">
-                        <div class="section-title-area">
-                            <h2 class="section-title">运维服务</h2>
-                        </div>
-                        <div class="service-content">
-                            <p style="text-indent: 0em; line-height: 1.75em;"><span style="font-size: 16px;">今天，制造企业在新的生产技术、信息技术的投资增长超乎想象，但以10年的周期来看，用于IT/OT运维的投资是初期建设的2倍甚至更多。佰思杰与越来越多客户形成战略合作，以专业的服务团队提供定制化的运维服务，帮客户聚焦核心业务，降低运维成本。</span></p><p><br/></p>
-                        </div>
-                    </div>
-                </section>-->
-                <!--end 运维服务-->
                 }
             </div>
         </main>
@@ -187,16 +165,16 @@
                         <div class="footer-left col-sm-4">
 
                             <div class="share col-sm-5" style="text-align:center;margin:15px">
-                                <img style="margin:0 auto;display:block;width:90px" src="/newStatic/picture/微信.jpg" />
-                                官方微信
+                                <img style="margin:0 auto;display:block" :src="'/kaptcha/'+setting.filePath" />
+                                {{setting.name}}
                             </div>
                         </div>
-                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">服务热线：<a href="tel:400-6340-623">400-6340-623</a></div>
+                        <div class="ServiceHotline" style="font-weight:bold;font-size:18px">{{setting.descs[0]}}</div>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="copyright" style="font-size:0.75em;color:#ccc">Copyright © 2018 BSG Technology</section>
+        <section class="copyright" style="font-size:0.75em;color:#ccc">{{setting.descs[1]}}</section>
     </footer>
     <!--end 底部-->
 </div><!-- #page -->
@@ -348,10 +326,13 @@
         data:{
             listTop:[],
             listBottom:[],
-            listInfo:[]
+            listInfo:[],
+            setting:'',
+            titleName:'',
         },
         created:function () {
             this.dataTableList();
+            this.setting = JSON.parse(sessionStorage.getItem("setting"));
             this.listTop = JSON.parse(sessionStorage.getItem("listTop"));
             this.listBottom = JSON.parse(sessionStorage.getItem("listBottom"));
         },
@@ -365,7 +346,18 @@
                 };
                 url="/web/list";
                 ajax.data("post",true,url,"json",dataStr,function (data) {
-                    vm.listInfo=data.data.infos[0].infos
+                    vm.listInfo=data.data.infos[0].infos;
+                    vm.titleName=data.data.title.desc
+                    vm.$nextTick(function () {
+                        for(var j=0;j<vm.listInfo.length;j++){
+                            if (info!=null){
+                                if (vm.listInfo[j].id==info){
+                                    var infoId='#'+info
+                                    document.getElementById(info).scrollIntoView(true);
+                                }
+                            }
+                        }
+                    })
                 })
             },
         }

@@ -67,12 +67,32 @@ public class Title extends Model<Title> implements Serializable {
     private String modifyUser;
     @TableField("is_menu")
     private String isMenu;
+    @TableField("desc")
+    private String desc;
 
     @TableField(exist = false)
     private List<Info> infos;
     @TableField(exist = false)
     private Integer type;
     private Integer hot;
+    @TableField(exist = false)
+    private List<String> descs;
+
+    public List<String> getDescs() {
+        return descs;
+    }
+
+    public void setDescs(List<String> descs) {
+        this.descs = descs;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public String getPidName() {
         return pidName;

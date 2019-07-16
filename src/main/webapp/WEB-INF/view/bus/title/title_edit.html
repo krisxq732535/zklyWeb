@@ -22,8 +22,14 @@
                     </option>
                     @}
                     @}
+                    @if(item.pid==-1){
+                    <option value="-1" selected>
+                        参数设置
+                    </option>
+                    @}
                 </#select>
                 <#input id="sortOrder" name="排序" value="${item.sortOrder}" />
+                <#input id="desc" name="描述" value="${item.desc}"/>
                 </div>
             <div class="col-sm-6">
                 <#select id="isMenu" name="0不在底部显示 1在底部显示" underline="true">
@@ -44,6 +50,7 @@
                 </option>
             </#select>
             <#avatar id="filePath" name="图片" underline="true" avatarImg="${item.filePath}"/>
+
 
         </div>
 

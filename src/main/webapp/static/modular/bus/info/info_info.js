@@ -1,9 +1,38 @@
 
 
 
-var markupStr=$("#content").html(); $('#summernote').summernote( {
-    height: 300,
+var markupStr=$("#content").html();
+$('#summernote').summernote( { lang:'zh-CN', placeholder: '请输入内容', height: 300 ,
+    callbacks: {
+        onImageUpload: function (files) {
+            debugger;
+            sendFile(files[0]);
+        }
+    }
 });
+//ajax上传图片
+function sendFile( file) {
+    debugger
+    var formData = new FormData();
+    formData.append("file", file);
+    $.ajax({
+        url: "/mgr/upload",//路径是你控制器中上传图片的方法，下面controller里面我会写到
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        success: function (data) {
+            if (data.code ==null){
+
+                $('#summernote').summernote('insertImage', '/kaptcha/'+data, data.split('.')[0]);
+
+            }else {
+                alert("上传本地图片失败")
+            }
+        }
+    });
+}
 /**
  * 初始化详情对话框
  */
@@ -71,7 +100,7 @@ InfoInfoDlg.collectData = function() {
  * 提交添加
  */
 InfoInfoDlg.addSubmit = function() {
-debugger
+
     this.clearData();
     var code1= $('#summernote').summernote('code');
     $('#content').val(code1)

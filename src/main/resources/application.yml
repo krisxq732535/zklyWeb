@@ -90,6 +90,6 @@ spring:
 guns:
   file-upload-path: /root/zkly/upload
 server:
-  port: 1033
+  port: 80
   tomcat:
       basedir: /data/tmp

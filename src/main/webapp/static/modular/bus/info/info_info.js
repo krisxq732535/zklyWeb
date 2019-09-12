@@ -24,9 +24,7 @@ function sendFile( file) {
         type: 'POST',
         success: function (data) {
             if (data.code ==null){
-
                 $('#summernote').summernote('insertImage', '/kaptcha/'+data, data.split('.')[0]);
-
             }else {
                 alert("上传本地图片失败")
             }
